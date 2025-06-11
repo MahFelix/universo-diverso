@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { LoginContainer, LoginHeader, LoginForm, FormGroup, LoginButton, SignupButton } from '../styles/LoginStyles';
-import graduationCap from '../assets/graduation-cap-icon.svg';
+import graduationCap from '../assets/planet.png';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -46,7 +47,9 @@ const Login = () => {
             />
           </FormGroup>
           <LoginButton type="submit">Entrar</LoginButton>
-          <SignupButton type="button">Criar uma conta</SignupButton>
+        <Link to="/signup" style={{ width: '100%', textDecoration: 'none' }}>
+  <SignupButton type="button">Criar uma conta</SignupButton>
+</Link>
         </LoginForm>
       </div>
     </LoginContainer>

@@ -40,8 +40,8 @@ export const LoginHeader = styled.div`
   gap: 10px;
 
   .cap-icon {
-    width: 32px;
-    height: 32px;
+    width: 120px;
+    height: 120px;
   }
 
   h1 {

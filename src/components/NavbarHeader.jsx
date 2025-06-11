@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import graduationCap from '../assets/capelo.png';
+import graduationCap from '../assets/planet.png';
 import userAvatar from '../assets/userProfile.png';
 import star from '../assets/star.png';
+import unmute from '../assets/unmute.png';
 
 const NavContainer = styled.nav`
   display: flex;
@@ -33,19 +34,22 @@ const Brand = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
+  
 
   h1 {
+    width: 200px;
     font-size: 18px;
     font-weight: 500;
   }
 `;
 
 const Badge = styled.span`
-  background-color: var(--primary-color);
   color: white;
   font-size: 12px;
   padding: 2px 6px;
-  border-radius: 10px;
+  border-radius: 10px;  
+  margin-left: -50px;
+  
 `;
 
 const PointsDisplay = styled.div`
@@ -79,7 +83,9 @@ const TopNav = () => {
         <img src={graduationCap} alt="Universo Diverso Logo" className="logo" />
         <Brand>
           <h1>Universo Diverso</h1>
-          <Badge>2D</Badge>
+          <Badge>
+              <img src={unmute} alt="sound" className="unmute" />
+          </Badge>
         </Brand>
       </LogoContainer>
             <StarImg src={star} alt="Estrela" />

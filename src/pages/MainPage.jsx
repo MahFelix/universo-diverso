@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import TopNav from '../components/NavbarHeader';
 import Sidebar from '../components/Sidebar';
-import ActivityCard from '../components/ActiviyCard';
+import ActivityCard from '../components/ActivityCard';
 import rocketIllustration from '../assets/foguete.png';
 import { ChartLineUp, Rocket, Users, Video, PuzzlePiece } from '@phosphor-icons/react';
 
@@ -124,41 +124,7 @@ const MainPage = () => {
           </SectionHeader>
           
           <ActivitiesGrid isMobile={isMobile}>
-            <ActivityCard 
-              title="Trilha da Inclusão" 
-              description="Aprenda sobre inclusão social e acessibilidade" 
-              color="orange"
-              icon={ChartLineUp}
-              isMobile={isMobile}
-            />
-            <ActivityCard 
-              title="Jogos de Diversidade" 
-              description="Aprenda brincando sobre diferentes culturas" 
-              color="green"
-              icon={Rocket}
-              isMobile={isMobile}
-            />
-            <ActivityCard 
-              title="Desafio de Acessibilidade" 
-              description="Aprenda a criar conteúdo acessível para todos" 
-              color="blue"
-              icon={Users}
-              isMobile={isMobile}
-            />
-            <ActivityCard 
-              title="Meu melhor eu" 
-              description="Dicas para desenvolver sua autoestima e confiança" 
-              color="red"
-              icon={Video}
-              isMobile={isMobile}
-            />
-            <ActivityCard 
-              title="Jogos de Empatia" 
-              description="Aprenda a se colocar no lugar do outro" 
-              color="light-green"
-              icon={PuzzlePiece}
-              isMobile={isMobile}
-            />
+       
           </ActivitiesGrid>
         </ActivitiesSection>
       </MainContent>
