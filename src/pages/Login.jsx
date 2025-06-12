@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { LoginContainer, LoginHeader, LoginForm, FormGroup, LoginButton, SignupButton } from '../styles/LoginStyles';
-import graduationCap from '../assets/planet.png';
+import { LoginContainer, LoginHeader, FormItem, FormGroup, InfoText } from '../styles/LoginStyles';
+import planetLogo from '../assets/planet.png';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -17,40 +17,48 @@ const Login = () => {
   return (
     <LoginContainer>
       <LoginHeader>
-        <img src={graduationCap} alt="Ícone de formatura" className="cap-icon" />
+        <img src={planetLogo} alt="Universo Diverso Logo" className="planet-logo" />
         <h1>Universo Diverso</h1>
       </LoginHeader>
       
       <div className="login-form-container">
-        <h2>Crie uma conta</h2>
-        <p>Para se conectar com seu aprendizado diverso</p>
+        <h2>Login na Plataforma</h2>
+        <p>Digite seu email e senha para entrar</p>
         
-        <LoginForm onSubmit={handleSubmit}>
-          <FormGroup>
+        <FormGroup onSubmit={handleSubmit}>
+          <FormItem>
+            <InfoText>E-mail:</InfoText>
             <input 
               type="email" 
               id="email" 
-              placeholder="E-mail" 
+              placeholder="Digite seu e-mail" 
               required 
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-          </FormGroup>
-          <FormGroup>
+          </FormItem>
+                
+          <FormItem>
+            <InfoText>Senha:</InfoText>
             <input 
               type="password" 
-              id="password" 
-              placeholder="Senha" 
+              id="senha" 
+              placeholder="Digite sua senha" 
               required 
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-          </FormGroup>
-          <LoginButton type="submit">Entrar</LoginButton>
-        <Link to="/signup" style={{ width: '100%', textDecoration: 'none' }}>
-  <SignupButton type="button">Criar uma conta</SignupButton>
-</Link>
-        </LoginForm>
+          </FormItem>
+            
+          <FormItem>
+          <p/>  <button type="submit" >Entrar</button> <p/>
+          </FormItem>
+        
+        </FormGroup>
+
+        <Link to="/signup" >
+          Criar uma nova conta 
+        </Link>
       </div>
     </LoginContainer>
   );
