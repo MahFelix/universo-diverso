@@ -77,6 +77,21 @@ export const SectionHeader = styled.div`
   }
 `;
 
+export const SectionA = styled.div`
+  display: flex;
+  margin-right: 20px;
+  gap: 5px;
+  margin-bottom: 10px;
+
+
+  h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 6px;
+  }
+
+  ;`
+
 export const ActivitiesGrid = styled.div`
   display: grid;
   grid-template-columns: ${props => props.isMobile ? '1fr' : 'repeat(5, 1fr)'};

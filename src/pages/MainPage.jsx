@@ -4,9 +4,10 @@ import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
 import ActivityCard from '../components/ActivityCard';
 import rocketIllustration from '../assets/foguete.png';
+import iconA from '../assets/icon.png';
 import { activitiesInProgress, newActivities } from './ActivitiesPage';  
 import {AppContainer, MainContent, WelcomeSection, WelcomeText, WelcomeImage, 
-  ActivitiesSection, SectionHeader, ActivitiesGrid} from '../styles/MainPageStyles';
+  ActivitiesSection, SectionHeader, ActivitiesGrid, SectionA} from '../styles/MainPageStyles';
 
 const MainPage = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -24,8 +25,8 @@ const MainPage = () => {
 
   // Pegamos os 2 primeiros objetos de cada array
   const recentActivities = [
-    ...activitiesInProgress.slice(),
-    ...newActivities.slice()
+    ...activitiesInProgress.slice(0,2),
+    ...newActivities.slice(0,3)
   ];
 
   return (
@@ -45,7 +46,10 @@ const MainPage = () => {
         
         <ActivitiesSection>
           <SectionHeader>
+            <SectionA>
+            <img src={iconA}></img>
             <h3>Suas Atividades</h3>
+            </SectionA>
          <a className="view-all" href="/activities">Ver todas</a>
           </SectionHeader>
           
