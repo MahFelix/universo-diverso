@@ -30,9 +30,18 @@ export const LogoContainer = styled.div`
   align-items: center;
   gap: 8px;
 
+
   .logo {
     width: 60px;
     height: 60px;
+
+     @media (max-width: 768px) {
+   margin-left:-22px;
+  }
+  }
+
+   @media (max-width: 768px) {
+   margin-right:-20px;
   }
 `;
 
@@ -52,6 +61,10 @@ export const BrandName = styled.div`
   font-size: 18px;
   color: #000;
   font-weight: 600;
+
+  @media (max-width: 768px) {
+      margin-right: 10px;
+  }
 `;
 
 
@@ -66,6 +79,7 @@ export const PointsContainer = styled.div`
   gap: 5px;
 `;
 export const UserProfileButton = styled(Button)`
+
   && {
     padding: 4px;
     min-width: 0;
@@ -75,6 +89,10 @@ export const UserProfileButton = styled(Button)`
     &:hover {
       transform: scale(1.1);
     }
+
+      @media (max-width: 768px) {
+      display: none;
+  }
   }
 `;
 

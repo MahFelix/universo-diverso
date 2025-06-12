@@ -15,6 +15,11 @@ export const Logo = styled.div`
   align-items: center;
   gap: 10px;
   margin-bottom: 60px;
+
+   .logo {
+    width: 100px;
+    height: 100px;
+  }
 `;
 
 export const PlanetIcon = styled.div`
@@ -114,3 +119,5 @@ export const CreateButton = styled.button`
     background-color: #333;
   }
 `;
+
+
