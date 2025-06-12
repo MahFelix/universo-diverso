@@ -78,7 +78,7 @@ export const PointsContainer = styled.div`
   font-weight: 500;
   gap: 5px;
 `;
-export const UserProfileButton = styled(Button)`
+export const UserProfileButton = styled.a`
 
   && {
     padding: 4px;
@@ -113,6 +113,7 @@ export const StyledMenu = styled(Menu)`
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       border-radius: 8px;
       margin-top: 8px;
+     
     }
     
     .MuiMenuItem-root {
@@ -124,6 +125,8 @@ export const StyledMenu = styled(Menu)`
       }
     }
   }
+
+  
 `;
 
 export const StarImg = styled.img`
@@ -162,7 +165,7 @@ const slideDown = keyframes`
 `;
 
 
-export const MenuButton = styled.button`
+export const MenuButton = styled.a`
   background: none;
   border: none;
   cursor: pointer;
