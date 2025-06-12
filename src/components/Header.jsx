@@ -24,8 +24,7 @@ const TopNav = () => {
         <UserProfile>
           <AccountCircleOutlined aria-label="Perfil do usuário"/>
         </UserProfile>
-      </HeaderRight>
-      
+      </HeaderRight>      
     </NavContainer>
   );
 };
