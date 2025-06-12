@@ -3,8 +3,7 @@ import ActivityCard from '../components/ActivityCard';
 import Header from '../components/Header';
 import {PageContainer, SectionContainer, SectionTitle, CardGrid} from '../styles/ActivitiesPage';
 
-const ActivitiesPage = () => {
-  // Dados das atividades (normalmente viriam de uma API)
+// Dados das atividades (normalmente viriam de uma API)
   const activitiesInProgress = [
     {
       id: 1,
