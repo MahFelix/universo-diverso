@@ -70,7 +70,9 @@ export const SectionHeader = styled.div`
 
   .view-all {
     font-size: 14px;
-    color: var(--primary-color);
+    color: #000;
+    font-weight: 500;
+    text-decoration: underline;
     cursor: pointer;
   }
 `;
@@ -79,4 +81,16 @@ export const ActivitiesGrid = styled.div`
   display: grid;
   grid-template-columns: ${props => props.isMobile ? '1fr' : 'repeat(5, 1fr)'};
   gap: ${props => props.isMobile ? '12px' : '16px'};
+
+`;
+
+export const ActivityCard = styled.div`
+  background-color: ${props => props.bgColor || '#f9f9f9'};
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 1%;
 `;

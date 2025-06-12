@@ -1,7 +1,10 @@
+// MainPage.js
 import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
+import ActivityCard from '../components/ActivityCard';
 import rocketIllustration from '../assets/foguete.png';
+import { activitiesInProgress, newActivities } from './ActivitiesPage';  
 import {AppContainer, MainContent, WelcomeSection, WelcomeText, WelcomeImage, 
   ActivitiesSection, SectionHeader, ActivitiesGrid} from '../styles/MainPageStyles';
 
@@ -19,9 +22,14 @@ const MainPage = () => {
     };
   }, []);
 
+  // Pegamos os 2 primeiros objetos de cada array
+  const recentActivities = [
+    ...activitiesInProgress.slice(),
+    ...newActivities.slice()
+  ];
+
   return (
-    <AppContainer isMobile={isMobile}>
-      {/* <Sidebar isMobile={isMobile} /> */}
+    <AppContainer isMobile={isMobile}> 
       <MainContent isMobile={isMobile}>
         <Header/>
         
@@ -38,11 +46,17 @@ const MainPage = () => {
         <ActivitiesSection>
           <SectionHeader>
             <h3>Suas Atividades</h3>
-            <span className="view-all">Ver todas</span>
+         <a className="view-all" href="/activities">Ver todas</a>
           </SectionHeader>
           
           <ActivitiesGrid isMobile={isMobile}>
-       
+            {recentActivities.map(activity => (
+              <ActivityCard 
+                key={activity.id}
+                {...activity}
+                onClick={() => console.log(`Atividade clicada: ${activity.title}`)}
+              />
+            ))}
           </ActivitiesGrid>
         </ActivitiesSection>
       </MainContent>

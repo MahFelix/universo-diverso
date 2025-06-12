@@ -7,6 +7,7 @@ export const SidebarContainer = styled.aside`
   display: flex;
   flex-direction: ${props => props.isMobile ? 'row' : 'column'};
   gap: ${props => props.isMobile ? '0' : '30px'};
+  cursor: pointer;
   
   ${props => props.isMobile && `
     position: fixed;
