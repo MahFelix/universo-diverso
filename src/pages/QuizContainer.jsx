@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import QuizIntro from '../components/QuizIntro';
 import QuizQuestion from '../components/QuizQuestion';
 import QuizResult from '../components/QuizResult';
-
+import {Container, ProgressBar, ProgressStep} from '../styles/Quiz';
 
 
 const quizData = {
@@ -39,43 +39,6 @@ const quizData = {
   ]
 };
 
-const Container = styled.div`
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-`;
-
-const ProgressBar = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  position: relative;
-  
-  &::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background-color: #e0e0e0;
-    z-index: -1;
-  }
-`;
-
-const ProgressStep = styled.div`
-  background-color: ${props => props.active ? '#03a9f4' : '#e0e0e0'};
-  color: white;
-  width: 60px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 4px;
-  font-weight: 500;
-  z-index: 1;
-`;
 
 function QuizContainer() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
