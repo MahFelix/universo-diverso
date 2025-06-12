@@ -51,21 +51,21 @@ const TopNav = () => {
 
             <MenuItem>
              <img src={IconProfile}></img>
-              <a href="/userProfile" onClick={() => setIsMenuOpen(false)}>Meu Perfil</a>
+              <a href="/profile" onClick={() => setIsMenuOpen(false)}>Meu Perfil</a>
             </MenuItem>
 
               <MenuItemMobile onClick={handleClose}>
                  <img src={IconLogout}></img>
-              <a href="/Logout" onClick={() => setIsMenuOpen(false)}>Sair</a>
+              <a href="/signup" onClick={() => setIsMenuOpen(false)}>Sair</a>
             </MenuItemMobile>
 
           </MenuList>
         </div>
+
         <LogoContainer>
           <img src={planetIcon} alt="Universo Diverso Logo" className="logo" />
         </LogoContainer>
         <BrandName>Universo Diverso</BrandName>
-        <VolumeUpOutlined aria-label="Habilitar ou desabilitar o áudio" />
       </HeaderLeft>
 
       <HeaderRight>
@@ -107,7 +107,7 @@ const TopNav = () => {
               Meu Perfil
             </MenuItem>
             <MenuItem onClick={handleClose}>
-              <Logout sx={{ marginRight: 1, color: '#ff6b6b' }} />
+              <Logout href="/"  sx={{ marginRight: 1, color: '#ff6b6b' }} />
               Sair
             </MenuItem>
           </StyledMenu>

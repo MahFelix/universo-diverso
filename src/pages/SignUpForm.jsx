@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import planetIcon from '../assets/planet.png';
 import {SignUpContainer, Logo, PlanetIcon, BrandName, FormContainer, FormTitle,
   FormGroup, Label, Input, RadioContainer, CreateButton} from '../styles/SignUp';
 
@@ -36,7 +37,7 @@ const SignUpForm = () => {
   return (
     <SignUpContainer>
       <Logo>
-        <PlanetIcon />
+       <img src={planetIcon} alt="Universo Diverso Logo" className="logo" />
         <BrandName>Universo Diverso</BrandName>
       </Logo>
       
