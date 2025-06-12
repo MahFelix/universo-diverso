@@ -18,6 +18,7 @@ export const GlobalStyle = createGlobalStyle`
     --button-color: #000;
     --button-text: #FFF;
     --button-hover: #333;
+    --button-text-hover: #FFF;
     --border-input:#747373;
   }
 
@@ -46,6 +47,7 @@ export const GlobalStyle = createGlobalStyle`
   
   button:hover {
     background: var(--button-hover);
+    color: var(--button-text-hover);
   }
   
   Link {

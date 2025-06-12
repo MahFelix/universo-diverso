@@ -1,22 +1,18 @@
-
-import { GameController, Book, FileText } from '@phosphor-icons/react';
+import {SportsEsportsOutlined,AutoStoriesOutlined, BookOutlined} from '@mui/icons-material';
 import {CardContainer, CardHeader, CardIcon, CardCategory, CardTitle, CardDescription, CardButton} from '../styles/ActivityCard';
 
 // Mapeamento de tipo para ícone
 const getIconForType = (type) => {
   switch (type.toLowerCase()) {
     case 'jogo':
-      return <GameController weight="fill" />;
+      return <SportsEsportsOutlined aria-label="Jogo"/>;
     case 'história':
-      return <Book weight="fill" />;
-    case 'tutorial':
-      return <FileText weight="fill" />;
+      return <AutoStoriesOutlined aria-label="História"/>;
     default:
-      return <Book weight="fill" />;
+      return <BookOutlined aria-label="Outros"/>;
   }
 };
 
-// Componente de Card
 const ActivityCard = ({
   bgColor,
   type,
@@ -30,7 +26,7 @@ const ActivityCard = ({
 }) => {
   const icon = getIconForType(type);
   const showProgress = progress !== undefined;
-  const categoryText = showProgress ? `${type.toUpperCase()} (${progress}%)` : type.toUpperCase();
+  const categoryText = showProgress ? `${progress}% concluídos` : type.toUpperCase();
 
   
 
@@ -42,8 +38,11 @@ const ActivityCard = ({
         </CardIcon>
         <CardCategory>{categoryText}</CardCategory>
       </CardHeader>
+
       <CardTitle color={textColor}>{title}</CardTitle>
-      <CardDescription color={textColor}>{description}</CardDescription>
+
+      <CardDescription color={textColor}><p>{description}</p></CardDescription>
+
       <CardButton 
         color={textColor} 
         onClick={onClick}
@@ -51,6 +50,7 @@ const ActivityCard = ({
       >
         {buttonText}
       </CardButton>
+      
     </CardContainer>
   );
 };
