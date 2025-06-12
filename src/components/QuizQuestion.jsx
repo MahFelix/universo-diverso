@@ -4,7 +4,7 @@ import {
   QuestionText,
   OptionsGrid,
   OptionButton,
-  ContinueButton, // 👈 Importado aqui
+  ContinueButton,
 } from "../styles/Quiz";
 
 function QuizQuestion({

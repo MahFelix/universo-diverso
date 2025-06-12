@@ -132,7 +132,7 @@ function QuizContainer() {
     setShowFeedback(false);
     setSelectedAnswer(null);
     setCanSelectAnswer(true);
-    navigate("/quiz");
+    navigate("/");
   };
 
   return (

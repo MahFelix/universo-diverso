@@ -168,6 +168,8 @@ export const OptionButton = styled.button`
 
   &:hover {
     background-color: #e3f2fd;
+    transform: translateY(-4px); /* efeito flutuante */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* sombra suave */
   }
 
   ${({ selected }) =>
@@ -177,6 +179,7 @@ export const OptionButton = styled.button`
       color: white;
     `}
 `;
+
 
 export const CloseButton = styled.button`
   position: absolute;
