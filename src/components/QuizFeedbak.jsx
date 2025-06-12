@@ -1,5 +1,4 @@
-import React from 'react';
-import styled from 'styled-components';
+
 import {FeedbackOverlay, FeedbackContainer, CloseButton, HeaderText, FeedbackText, ContinueButton} from '../styles/Quiz';
 
 function QuizFeedback({ isCorrect, feedback, onContinue }) {

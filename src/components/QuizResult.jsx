@@ -1,5 +1,3 @@
-import React from 'react';
-import styled from 'styled-components';
 import {ResultContainer, Title, ScoreText, ScoreValue, CongratsText, RestartButton} from '../styles/Quiz'
 
 function QuizResult({ score, total, onRestart }) {

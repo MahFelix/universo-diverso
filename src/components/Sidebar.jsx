@@ -1,5 +1,4 @@
-import React from 'react';
-import styled from 'styled-components';
+
 import { House, Book, ChartBar, Gear } from '@phosphor-icons/react';
 import {SidebarContainer, SidebarHeader, SidebarNav} from '../styles/Sidebar';
 

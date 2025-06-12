@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+
 import { GameController, Book, FileText } from '@phosphor-icons/react';
 import {CardContainer, CardHeader, CardIcon, CardCategory, CardTitle, CardDescription, CardButton} from '../styles/ActivityCard';
 

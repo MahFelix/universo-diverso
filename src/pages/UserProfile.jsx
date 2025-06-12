@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import styled from 'styled-components';
 import { List, Planet, SpeakerHigh, Star, PencilSimple, User } from '@phosphor-icons/react';
 import Header from '../components/Header';
 import {ProfileContainer, ProfileContent, ProfileTitle, ProfileAvatar, AvatarPlaceholder, 

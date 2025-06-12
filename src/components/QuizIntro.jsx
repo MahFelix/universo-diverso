@@ -1,5 +1,4 @@
-import React from 'react';
-import styled from 'styled-components';
+
 import {Title, IntroContainer, Description, StartButton} from '../styles/Quiz';
 
 function QuizIntro({ title, description, onStart }) {

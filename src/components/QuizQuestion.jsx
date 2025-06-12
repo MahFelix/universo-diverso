@@ -1,5 +1,4 @@
-import React from 'react';
-import styled from 'styled-components';
+
 import QuizFeedback from './QuizFeedbak';
 import {QuestionContainer, QuestionNumber, QuestionText, OptionsGrid, OptionButton} from '../styles/Quiz';
 
