@@ -9,12 +9,16 @@ export const GlobalStyle = createGlobalStyle`
     --green-card: #2af742;
     --blue-card: #1ba7ff;
     --red-card: #EA787E;
-    --light-green-card:rgb(80, 192, 95);
+    --light-green-card:#50c05f;
     --background-color: #f5f5f5;
     --sidebar-bg: #ffffff;
     --text-color: #333;
     --card-text: #ffffff;
     --login-bg: #d0f2f7;
+    --button-color: #000;
+    --button-text: #FFF;
+    --button-hover: #333;
+    --border-input:#747373;
   }
 
   * {
@@ -30,6 +34,33 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   button {
+    width: 300px;
+    height: 45px;
     cursor: pointer;
+    background: var(--button-color);
+    color: var(--button-text);
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
   }
+  
+  button:hover {
+    background: var(--button-hover);
+  }
+  
+  Link {
+    width: '100%';
+    textDecoration: 'none';
+  }
+
+  Input {
+    width: 300px;
+    height: 35x;
+    padding: 12px;
+    border: 1px solid ;
+    border-radius: 6px;
+    border-color: var(--border-input);
+    font-size: 14px;
+  }
+
 `;
