@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
-import ActivityCard from '../components/ActivityCard';
 import rocketIllustration from '../assets/foguete.png';
 import {AppContainer, MainContent, WelcomeSection, WelcomeText, WelcomeImage, 
   ActivitiesSection, SectionHeader, ActivitiesGrid} from '../styles/MainPageStyles';
@@ -23,9 +21,9 @@ const MainPage = () => {
 
   return (
     <AppContainer isMobile={isMobile}>
-      <Sidebar isMobile={isMobile} />
+      {/* <Sidebar isMobile={isMobile} /> */}
       <MainContent isMobile={isMobile}>
-        <Header />
+        <Header/>
         
         <WelcomeSection isMobile={isMobile}>
           <WelcomeText>

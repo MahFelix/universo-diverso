@@ -4,14 +4,24 @@ export const NavContainer = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 0;
-  border-bottom: 1px solid #eee;
-  background: #12C1D4;
-background: linear-gradient(90deg, rgba(18, 193, 212, 1) 0%, rgba(26, 223, 85, 1) 100%);
-border-bottom-left-radius: 40px;
-border-bottom-right-radius: 40px;
-  color: white;
-  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(90deg, #54c1d3 0%, #3cb878 100%);
+  height: 60px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+`;
+
+export const HeaderLeft = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+`;
+
+export const HeaderRight = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 16px;
 `;
 
 export const LogoContainer = styled.div`
@@ -25,40 +35,26 @@ export const LogoContainer = styled.div`
   }
 `;
 
-export const Brand = styled.div`
+export const BrandName = styled.div`
+  font-size: 18px;
+  color: #000;
+  font-weight: 600;
+`;
+
+
+export const PointsContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 8px;
-  
-
-  h1 {
-    width: 200px;
-    font-size: 18px;
-    font-weight: 500;
-  }
-`;
-
-export const Badge = styled.span`
-  color: white;
-  font-size: 12px;
-  padding: 2px 6px;
-  border-radius: 10px;  
-  margin-left: -50px;
-  
-`;
-
-export const PointsDisplay = styled.div`
   background-color: #ffef62;
   padding: 6px 12px;
   border-radius: 20px;
-  color: #000;
   font-size: 14px;
   font-weight: 500;
-  margin-left: 120vh;
+  gap: 5px;
 `;
 
 export const UserProfile = styled.div`
-  .avatar {
+  .AccountCircleOutlined {
     width: 62px;
     height: 62px;
     border-radius: 50%;

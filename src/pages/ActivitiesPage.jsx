@@ -1,10 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
-import { List, Planet, SpeakerHigh, Star, User } from '@phosphor-icons/react';
 import ActivityCard from '../components/ActivityCard';
-import {PageContainer, Header, HeaderLeft, HeaderRight, MenuButton, 
-  Logo, PlanetIcon, BrandName, PointsContainer, UserButton, PageTitle, 
-  SectionContainer, SectionTitle, CardGrid} from '../styles/ActivitiesPage';
+import Header from '../components/Header';
+import {PageContainer, SectionContainer, SectionTitle, CardGrid} from '../styles/ActivitiesPage';
 
 const ActivitiesPage = () => {
   // Dados das atividades (normalmente viriam de uma API)
@@ -121,70 +118,51 @@ const ActivitiesPage = () => {
 
   return (
     <PageContainer>
-      <PageTitle>Atividades</PageTitle>
+      <Header/>
+
+      <SectionContainer>
+        <SectionContainer>
+          <SectionTitle>Atividades já iniciadas</SectionTitle>
+          <CardGrid>
+            {activitiesInProgress.map(activity => (
+              <ActivityCard 
+                key={activity.id}
+                {...activity}
+                onClick={() => handleCardClick(activity)}
+              />
+            ))}
+          </CardGrid>
+        </SectionContainer>
+
+        <SectionContainer>
+          <SectionTitle>Novas Atividades</SectionTitle>
+          <CardGrid>
+            {newActivities.map(activity => (
+              <ActivityCard 
+                key={activity.id}
+                {...activity}
+                onClick={() => handleCardClick(activity)}
+              />
+            ))}
+          </CardGrid>
+        </SectionContainer>
+
+        <SectionContainer>
+          <SectionTitle>Atividades já finalizadas</SectionTitle>
+          <CardGrid>
+            {completedActivities.map(activity => (
+              <ActivityCard 
+                key={activity.id}
+                {...activity}
+                onClick={() => handleCardClick(activity)}
+              />
+            ))}
+          </CardGrid>
+        </SectionContainer>
+
+      </SectionContainer>
+
       
-      <Header>
-        <HeaderLeft>
-          <MenuButton aria-label="Menu de navegação">
-            <List weight="bold" />
-          </MenuButton>
-          <Logo>
-            <PlanetIcon aria-hidden="true" />
-            <BrandName>Universo Diverso</BrandName>
-          </Logo>
-          <MenuButton aria-label="Controles de áudio">
-            <SpeakerHigh weight="fill" />
-          </MenuButton>
-        </HeaderLeft>
-        <HeaderRight>
-          <PointsContainer aria-label="Pontuação do usuário: 120 pontos">
-            <Star weight="fill" color="#FFB300" aria-hidden="true" />
-            <span>120 pontos</span>
-          </PointsContainer>
-          <UserButton aria-label="Perfil do usuário">
-            <User weight="fill" aria-hidden="true" />
-          </UserButton>
-        </HeaderRight>
-      </Header>
-
-      <SectionContainer>
-        <SectionTitle>Atividades já iniciadas</SectionTitle>
-        <CardGrid>
-          {activitiesInProgress.map(activity => (
-            <ActivityCard 
-              key={activity.id}
-              {...activity}
-              onClick={() => handleCardClick(activity)}
-            />
-          ))}
-        </CardGrid>
-      </SectionContainer>
-
-      <SectionContainer>
-        <SectionTitle>Novas Atividades</SectionTitle>
-        <CardGrid>
-          {newActivities.map(activity => (
-            <ActivityCard 
-              key={activity.id}
-              {...activity}
-              onClick={() => handleCardClick(activity)}
-            />
-          ))}
-        </CardGrid>
-      </SectionContainer>
-
-      <SectionContainer>
-        <SectionTitle>Atividades já finalizadas</SectionTitle>
-        <CardGrid>
-          {completedActivities.map(activity => (
-            <ActivityCard 
-              key={activity.id}
-              {...activity}
-              onClick={() => handleCardClick(activity)}
-            />
-          ))}
-        </CardGrid>
-      </SectionContainer>
     </PageContainer>
   );
 };

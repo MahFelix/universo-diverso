@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { List, Planet, SpeakerHigh, Star, PencilSimple, User } from '@phosphor-icons/react';
-import {ProfileContainer, Header, HeaderLeft, HeaderRight, MenuButton, Logo, PlanetIcon,
-  BrandName, PointsContainer, UserButton, ProfileContent, ProfileTitle, ProfileAvatar, AvatarPlaceholder, 
+import Header from '../components/Header';
+import {ProfileContainer, ProfileContent, ProfileTitle, ProfileAvatar, AvatarPlaceholder, 
   ProfileInfoContainer, ProfileInfoItem, InfoText, EditButton} from '../styles/UserProfile';
 
 const UserProfileComponent = () => {
@@ -22,29 +22,7 @@ const UserProfileComponent = () => {
 
   return (
     <ProfileContainer>
-      <Header>
-        <HeaderLeft>
-          <MenuButton>
-            <List weight="bold" />
-          </MenuButton>
-          <Logo>
-            <PlanetIcon />
-            <BrandName>Universo Diverso</BrandName>
-          </Logo>
-          <MenuButton>
-            <SpeakerHigh weight="fill" />
-          </MenuButton>
-        </HeaderLeft>
-        <HeaderRight>
-          <PointsContainer>
-            <Star weight="fill" color="#FFB300" />
-            <span>{user.points} pontos</span>
-          </PointsContainer>
-          <UserButton>
-            <User weight="fill" />
-          </UserButton>
-        </HeaderRight>
-      </Header>
+      <Header/>
 
       <ProfileContent>
         <ProfileTitle>Meu Perfil</ProfileTitle>
