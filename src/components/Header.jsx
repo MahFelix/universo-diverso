@@ -1,5 +1,4 @@
-import React from 'react';
-import styled from 'styled-components';
+
 import graduationCap from '../assets/planet.png';
 import userAvatar from '../assets/userProfile.png';
 import star from '../assets/star.png';

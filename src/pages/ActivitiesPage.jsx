@@ -1,5 +1,4 @@
-import React from 'react';
-import styled from 'styled-components';
+
 import { List, Planet, SpeakerHigh, Star, User } from '@phosphor-icons/react';
 import ActivityCard from '../components/ActivityCard';
 import {PageContainer, Header, HeaderLeft, HeaderRight, MenuButton, 

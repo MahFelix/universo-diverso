@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
 import {SignUpContainer, Logo, PlanetIcon, BrandName, FormContainer, FormTitle,
   FormGroup, Label, Input, RadioContainer, CreateButton} from '../styles/SignUp';
 
