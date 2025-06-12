@@ -13,7 +13,7 @@ const ActivitiesPage = () => {
       progress: 50,
       title: 'Trilha da Inclusão',
       description: 'Um jogo de tabuleiro digital sobre conceitos de acessibilidade e inclusão',
-      buttonText: 'Jogar mais agora'
+      buttonText: 'Continuar Jogando'
     },
     {
       id: 2,
@@ -33,7 +33,7 @@ const ActivitiesPage = () => {
       type: 'Tutorial',
       title: 'Questão de Acessibilidade',
       description: 'Entenda as questões e desafios da acessibilidade digital para usuários com deficiência',
-      buttonText: 'Iniciar para jogar'
+      buttonText: 'Clique para aprender'
     },
     {
       id: 4,
@@ -41,7 +41,7 @@ const ActivitiesPage = () => {
       type: 'História',
       title: 'Meu melhor amigo',
       description: 'Descubra como uma amizade pode trazer força e inclusão para todos nós',
-      buttonText: 'Clique para jogar'
+      buttonText: 'Clique para ler'
     },
     {
       id: 5,
@@ -57,7 +57,7 @@ const ActivitiesPage = () => {
       type: 'Tutorial',
       title: 'Missão de Inclusão',
       description: 'Ajude Sara a encontrar uma alternativa para participar das atividades na escola',
-      buttonText: 'Clique para jogar'
+      buttonText: 'Clique para aprender'
     },
     {
       id: 7,
@@ -66,8 +66,6 @@ const ActivitiesPage = () => {
       title: 'Desafios de Empatia',
       description: 'Coloque-se no lugar do outro em situações do dia a dia e descubra como ser mais inclusivo',
       buttonText: 'Clique para jogar',
-      textColor: '#fff',
-      iconColor: '#fff'
     },
     {
       id: 8,
@@ -75,7 +73,7 @@ const ActivitiesPage = () => {
       type: 'História',
       title: 'Não quero me mudar!',
       description: 'A história de como uma mudança de escola pode ser desafiadora para crianças neurodivergentes',
-      buttonText: 'Clique para jogar'
+      buttonText: 'Clique para ler'
     },
     {
       id: 9,
@@ -83,7 +81,7 @@ const ActivitiesPage = () => {
       type: 'História',
       title: 'O passeio da escola',
       description: 'Participe de um passeio escolar inclusivo e aprenda sobre acessibilidade',
-      buttonText: 'Clique para jogar'
+      buttonText: 'Clique para ler'
     }
   ];
 
@@ -96,8 +94,6 @@ const ActivitiesPage = () => {
       title: 'Jogo da Inclusão de Palavras',
       description: 'Aprenda palavras e termos adequados ao falar sobre pessoas com deficiência',
       buttonText: 'Jogar novamente',
-      textColor: '#fff',
-      iconColor: '#fff'
     },
     {
       id: 11,
@@ -106,7 +102,7 @@ const ActivitiesPage = () => {
       progress: 100,
       title: 'O aniversário da Mariana',
       description: 'Veja como uma festa de aniversário pode ser adaptada para incluir todos os amigos',
-      buttonText: 'Jogar novamente'
+      buttonText: 'Ler novamente'
     }
   ];
 

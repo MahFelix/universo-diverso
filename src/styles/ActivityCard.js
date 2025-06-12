@@ -6,11 +6,12 @@ export const CardContainer = styled.div`
   padding: 14px;
   display: flex;
   flex-direction: column;
-  height: 160px;
+  height: 180px;
 `;
 
 export const CardHeader = styled.div`
   display: flex;
+  align-items: center;
   justify-content: space-between;
   margin-bottom: 8px;
 `;
@@ -24,6 +25,7 @@ export const CardIcon = styled.div`
 
 export const CardCategory = styled.span`
   font-size: 10px;
+  text-transform: uppercase;
   background-color: rgba(255, 255, 255, 0.3);
   padding: 2px 6px;
   border-radius: 4px;
@@ -36,22 +38,19 @@ export const CardTitle = styled.h3`
   color: ${props => props.color || '#000'};
 `;
 
-export const CardDescription = styled.p`
+export const CardDescription = styled.div`
   font-size: 11px;
-  flex-grow: 1;
+  padding: 4px;
   color: ${props => props.color || '#000'};
 `;
 
 export const CardButton = styled.button`
+  width: 100%;
   font-size: 10px;
   background-color: rgba(0, 0, 0, 0.1);
-  border: none;
-  border-radius: 4px;
   padding: 6px;
   text-transform: uppercase;
-  cursor: pointer;
   color: ${props => props.color || '#000'};
   font-weight: 600;
-  align-self: flex-start;
   margin-top: 6px;
 `;
