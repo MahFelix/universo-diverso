@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 
 export const AppContainer = styled.div`
+
+ margin: 0 auto;
   display: flex;
   flex-direction: ${props => props.isMobile ? 'column-reverse' : 'row'};
   min-height: 100vh;
+
 `;
 
 export const MainContent = styled.main`
+ margin: 0 auto;
   flex: 1;
   padding: ${props => props.isMobile ? '0 16px 70px' : '0 24px 24px'};
   background-color: #ffffff;

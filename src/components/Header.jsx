@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import planetIcon from '../assets/planet.png';
+import IconA from '../assets/icon.png';
+import IconHome from '../assets/home.png';
+import IconProfile from '../assets/account_circle.png';
+import IconLogout from '../assets/arrow_back.png';
 import { Menu, MenuItem, Avatar, Button } from '@mui/material';
 import { MenuOutlined, VolumeUpOutlined, StarBorderRounded,  Logout, AccountCircle } from '@mui/icons-material';
-import { NavContainer, LogoContainer, HeaderLeft, HeaderRight,UserAvatar, StyledMenu, BrandName, MenuButton, MenuList,PointsContainer, UserProfileButton } from '../styles/Header';
+import { NavContainer, LogoContainer, HeaderLeft, MenuItemMobile, HeaderRight,UserAvatar, StyledMenu, BrandName, MenuButton, MenuList,PointsContainer, UserProfileButton } from '../styles/Header';
 
 const TopNav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,12 +39,25 @@ const TopNav = () => {
           </MenuButton>
 
           <MenuList $isOpen={isMenuOpen}>
-            <MenuItem>
+            <MenuItem> 
+              <img src={IconHome}></img>
               <a href="/" onClick={() => setIsMenuOpen(false)}>Home</a>
             </MenuItem>
-            <MenuItem>
+
+              <MenuItemMobile onClick={handleClose}>
+            <img src={IconA} width={24}></img>
               <a href="/activities" onClick={() => setIsMenuOpen(false)}>Atividades</a>
+            </MenuItemMobile>
+
+            <MenuItem>
+             <img src={IconProfile}></img>
+              <a href="/userProfile" onClick={() => setIsMenuOpen(false)}>Meu Perfil</a>
             </MenuItem>
+
+              <MenuItemMobile onClick={handleClose}>
+                 <img src={IconLogout}></img>
+              <a href="/Logout" onClick={() => setIsMenuOpen(false)}>Sair</a>
+            </MenuItemMobile>
 
           </MenuList>
         </div>
@@ -52,7 +69,7 @@ const TopNav = () => {
       </HeaderLeft>
 
       <HeaderRight>
-        <PointsContainer aria-label="Pontuação do usuário">
+        <PointsContainer aria-label="Pontuação do usuário" >
           <StarBorderRounded aria-label="Estrela" />
           <span>120 pontos</span>
         </PointsContainer>

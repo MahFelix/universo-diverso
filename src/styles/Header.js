@@ -36,6 +36,18 @@ export const LogoContainer = styled.div`
   }
 `;
 
+export const MenuItemMobile = styled.div`
+  display: none;
+  align-items: center;
+    padding: 12px 16px;
+  
+  @media (max-width: 768px) {
+    display: flex;
+    cursor: pointer;
+  }
+`;
+
+
 export const BrandName = styled.div`
   font-size: 18px;
   color: #000;
@@ -169,25 +181,32 @@ export const MenuItem = styled.li`
   padding: 12px 16px;
   border-bottom: 1px solid #f0f0f0;
   transition: background-color 0.3s;
-    background-color: #fff;
+  background-color: #fff;
+
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 24px;
+    margin-right: 12px;
+  }
+
   &:last-child {
     border-bottom: none;
   }
-  
+
   &:hover {
     background-color: #f5f5f5;
   }
-  
+
   a {
     text-decoration: none;
     color: #333;
-    display: block;
     font-weight: 500;
-    
+
     &:hover {
       color: #1890ff;
     }
   }
 `;
-
 
