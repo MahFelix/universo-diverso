@@ -14,8 +14,8 @@ function App() {
     <Router>
       <GlobalStyle />
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/main" element={<MainPage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<MainPage />} />
         <Route path="/signup" element={<SignUpForm />} /> 
          <Route path="/profile" element={<UserProfileComponent />} />
          <Route path="/activities" element={<ActivitiesPage />} /> 
