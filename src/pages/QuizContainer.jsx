@@ -1,81 +1,77 @@
-/* eslint-disable no-unused-vars */
-import React, { useState, useEffect } from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
-import QuizIntro from '../components/QuizIntro';
-import QuizQuestion from '../components/QuizQuestion';
-import QuizResult from '../components/QuizResult';
-
-
+import React, { useState, useEffect } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import QuizIntro from "../components/QuizIntro";
+import QuizQuestion from "../components/QuizQuestion";
+import QuizResult from "../components/QuizResult";
+import { Container, ProgressBar, ProgressStep } from "../styles/Quiz";
 
 const quizData = {
-  title: "Questão de Acessibilidade",
-  description: "Entenda os conceitos e desafios da acessibilidade digital para usuários com deficiência",
+  title: "Quiz de Acessibilidade",
+  description:
+    "Vamos aprender juntos sobre como tornar a internet um lugar legal para todos!",
   questions: [
     {
       id: 1,
-      text: "Por que garantir um campo de acesso?",
+      text: "Por que é importante que todos possam usar a internet?",
       options: [
-        { id: 'a', text: "Os leitores de tela precisam saber" },
-        { id: 'b', text: "Para atender a legislação" },
-        { id: 'c', text: "Para não ser processado" },
-        { id: 'd', text: "Todos precisam ter acesso" }
+        { id: "a", text: "Porque é divertido compartilhar" },
+        { id: "b", text: "Porque tem muitos jogos legais" },
+        { id: "c", text: "Porque podemos aprender muitas coisas" },
+        { id: "d", text: "Todas as respostas estão certas!" },
       ],
-      correctAnswer: 'd',
-      feedback: "As pessoas também precisam acessar o conteúdo independente de sua condição. Garantir o acesso é essencial para todos."
+      correctAnswer: "d",
+      feedback:
+        "Isso mesmo! A internet é para todos se divertirem, aprenderem e compartilharem juntos! 🌈",
+      incorrectFeedback:
+        "Quase lá! Lembre-se que a internet tem muitas coisas legais para todos! 😊",
     },
     {
       id: 2,
-      text: "O que é um intérprete de Libras?",
+      text: "Como podemos ajudar um amigo que não enxerga a usar o computador?",
       options: [
-        { id: 'a', text: "Uma pessoa que cria traduções" },
-        { id: 'b', text: "Um profissional que interpreta a língua" },
-        { id: 'c', text: "Um software para tradução" },
-        { id: 'd', text: "Um dispositivo de acessibilidade" }
+        { id: "a", text: "Com um leitor de tela especial" },
+        { id: "b", text: "Descrevendo as imagens" },
+        { id: "c", text: "Usando sons e músicas" },
+        { id: "d", text: "Todas as formas ajudam!" },
       ],
-      correctAnswer: 'b',
-      feedback: "As pessoas também precisam acessar o conteúdo independente de sua condição. Garantir o acesso é essencial para todos."
-    }
-  ]
+      correctAnswer: "d",
+      feedback:
+        "Parabéns! Existem várias formas de ajudar nossos amigos a usarem o computador! 🌟",
+      incorrectFeedback:
+        "Tente novamente! Existem muitas maneiras de ajudar nossos amigos. 🤗",
+    },
+    {
+      id: 3,
+      text: "Qual é a melhor forma de fazer um vídeo para todos os amigos?",
+      options: [
+        { id: "a", text: "Colocando legendas coloridas" },
+        { id: "b", text: "Usando uma linguagem simples" },
+        { id: "c", text: "Falando devagar e claro" },
+        { id: "d", text: "Todas as opções juntas!" },
+      ],
+      correctAnswer: "d",
+      feedback:
+        "Isso mesmo! Quanto mais formas diferentes de entender o vídeo, melhor para todos! 🎥✨",
+      incorrectFeedback:
+        "Continue tentando! Pense em como todos os amigos podem entender o vídeo. 🎬",
+    },
+    {
+      id: 4,
+      text: "O que é acessibilidade?",
+      options: [
+        { id: "a", text: "É um jogo muito legal" },
+        { id: "b", text: "É uma forma de fazer amigos" },
+        { id: "c", text: "É deixar tudo fácil para todos" },
+        { id: "d", text: "É um tipo de brincadeira" },
+      ],
+      correctAnswer: "c",
+      feedback:
+        "Certinho! Acessibilidade é fazer com que todos possam participar facilmente! 🌈✨",
+      incorrectFeedback:
+        "Quase lá! Pense em como podemos ajudar todos a participarem juntos! 🤝",
+    },
+  ],
 };
-
-const Container = styled.div`
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-`;
-
-const ProgressBar = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  position: relative;
-  
-  &::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background-color: #e0e0e0;
-    z-index: -1;
-  }
-`;
-
-const ProgressStep = styled.div`
-  background-color: ${props => props.active ? '#03a9f4' : '#e0e0e0'};
-  color: white;
-  width: 60px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 4px;
-  font-weight: 500;
-  z-index: 1;
-`;
 
 function QuizContainer() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -83,44 +79,50 @@ function QuizContainer() {
   const [showFeedback, setShowFeedback] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [isCorrect, setIsCorrect] = useState(false);
+  const [canSelectAnswer, setCanSelectAnswer] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Reset quiz state when component mounts
     setCurrentQuestion(0);
     setScore(0);
     setShowFeedback(false);
     setSelectedAnswer(null);
+    setCanSelectAnswer(true);
   }, []);
 
   const handleStartQuiz = () => {
-    navigate('/question/1');
+    navigate("/quiz/questao/1");
     setCurrentQuestion(1);
   };
 
   const handleAnswerSelect = (questionId, answerId) => {
+    if (!canSelectAnswer) return;
+
     setSelectedAnswer(answerId);
-    
-    const question = quizData.questions.find(q => q.id === questionId);
+    const question = quizData.questions.find((q) => q.id === questionId);
     const correct = question.correctAnswer === answerId;
-    
+
     setIsCorrect(correct);
     if (correct) {
-      setScore(prev => prev + 1);
+      setScore((prev) => prev + 1);
     }
-    
+
     setShowFeedback(true);
+    setCanSelectAnswer(false);
   };
 
   const handleContinue = () => {
     setShowFeedback(false);
     setSelectedAnswer(null);
-    
-    if (currentQuestion < quizData.questions.length) {
-      navigate(`/question/${currentQuestion + 1}`);
-      setCurrentQuestion(prev => prev + 1);
+
+    const nextQuestion = currentQuestion + 1;
+
+    if (nextQuestion <= quizData.questions.length) {
+      navigate(`/quiz/questao/${nextQuestion}`);
+      setCurrentQuestion(nextQuestion);
+      setCanSelectAnswer(true);
     } else {
-      navigate('/result');
+      navigate("/quiz/resultado");
     }
   };
 
@@ -129,63 +131,85 @@ function QuizContainer() {
     setScore(0);
     setShowFeedback(false);
     setSelectedAnswer(null);
-    navigate('/');
+    setCanSelectAnswer(true);
+    navigate("/");
   };
 
   return (
     <Container>
       <Routes>
-        <Route path="/" element={
-          <QuizIntro 
-            title={quizData.title}
-            description={quizData.description}
-            onStart={handleStartQuiz}
-          />
-        } />
-        
-        {quizData.questions.map((question, index) => (
-          <Route 
+        <Route
+          path="/"
+          element={
+            <QuizIntro
+              title={quizData.title}
+              description={quizData.description}
+              onStart={handleStartQuiz}
+            />
+          }
+        />
+
+        {quizData.questions.map((question) => (
+          <Route
             key={question.id}
-            path={`/question/${question.id}`} 
+            path={`questao/${question.id}`}
             element={
               <>
                 <ProgressBar>
-                  <ProgressStep active>Novo Jogo</ProgressStep>
-                  <ProgressStep active={currentQuestion >= 1}>Q1</ProgressStep>
-                  <ProgressStep active={currentQuestion >= 2}>Q2</ProgressStep>
-                  <ProgressStep active={currentQuestion > quizData.questions.length}>Fim</ProgressStep>
+                  <ProgressStep active={currentQuestion >= 0}>Novo jogo</ProgressStep>
+
+                  {quizData.questions.map((_, index) => (
+                    <ProgressStep key={index} active={currentQuestion >= index + 1}>
+                      Q{index + 1}
+                    </ProgressStep>
+                  ))}
+
+                  <ProgressStep active={currentQuestion > quizData.questions.length}>
+                    Fim
+                  </ProgressStep>
                 </ProgressBar>
-                
+
                 <QuizQuestion
                   question={question}
                   selectedAnswer={selectedAnswer}
                   showFeedback={showFeedback}
                   isCorrect={isCorrect}
-                  feedback={question.feedback}
-                  onAnswerSelect={(answerId) => handleAnswerSelect(question.id, answerId)}
+                  feedback={isCorrect ? question.feedback : question.incorrectFeedback}
+                  onAnswerSelect={(answerId) =>
+                    handleAnswerSelect(question.id, answerId)
+                  }
                   onContinue={handleContinue}
+                  canSelectAnswer={canSelectAnswer}
                 />
               </>
             }
           />
         ))}
-        
-        <Route path="/result" element={
-          <>
-            <ProgressBar>
-              <ProgressStep active>Novo Jogo</ProgressStep>
-              <ProgressStep active>Q1</ProgressStep>
-              <ProgressStep active>Q2</ProgressStep>
-              <ProgressStep active>Fim</ProgressStep>
-            </ProgressBar>
-            
-            <QuizResult 
-              score={score}
-              total={quizData.questions.length}
-              onRestart={handleRestart}
-            />
-          </>
-        } />
+
+        <Route
+          path="resultado"
+          element={
+            <>
+              <ProgressBar>
+                <ProgressStep active>Novo Jogo</ProgressStep>
+
+                {quizData.questions.map((q, index) => (
+                  <ProgressStep key={q.id} active>
+                    Q{index + 1}
+                  </ProgressStep>
+                ))}
+
+                <ProgressStep active>Fim</ProgressStep>
+              </ProgressBar>
+
+              <QuizResult
+                score={score}
+                total={quizData.questions.length}
+                onRestart={handleRestart}
+              />
+            </>
+          }
+        />
       </Routes>
     </Container>
   );
