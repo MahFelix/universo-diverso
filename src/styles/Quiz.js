@@ -1,98 +1,47 @@
-import styled from 'styled-components';
+import styled, { css } from "styled-components";
 
+//
+// LAYOUT
+//
 export const Container = styled.div`
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: #03a9f4;
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow: hidden;
 `;
 
+//
+// BARRA DE PROGRESSO
+//
 export const ProgressBar = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
-  position: relative;
-  
-  &::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background-color: #e0e0e0;
-    z-index: -1;
-  }
+  margin: 16px 0;
+  padding: 0 8px;
 `;
 
 export const ProgressStep = styled.div`
-  background-color: ${props => props.active ? '#03a9f4' : '#e0e0e0'};
-  color: white;
-  width: 60px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 4px;
-  font-weight: 500;
-  z-index: 1;
-`;
-
-export const ResultContainer = styled.div`
-  background-color: #03a9f4;
-  padding: 40px 30px;
-  border-radius: 8px;
-  color: white;
+  flex: 1;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 300px;
+  padding: 10px;
+  margin: 0 4px;
+  border-radius: 8px;
+  font-weight: bold;
+  background-color: ${(props) => (props.active ? "#9b5de5" : "#e0e0e0")};
+  color: ${(props) => (props.active ? "#fff" : "#555")};
 `;
 
+//
+// TEXTOS
+//
 export const Title = styled.h1`
   font-size: 24px;
   margin-bottom: 20px;
-`;
-
-export const ScoreText = styled.p`
-  font-size: 16px;
-  margin-bottom: 10px;
-`;
-
-export const ScoreValue = styled.p`
-  font-size: 18px;
-  margin-bottom: 10px;
-  font-weight: bold;
-`;
-
-export const CongratsText = styled.p`
-  font-size: 16px;
-  margin-bottom: 30px;
-  max-width: 380px;
-`;
-
-export const RestartButton = styled.button`
-  background-color: white;
-  color: #03a9f4;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 16px;
-  
-  &:hover {
-    background-color: #f0f0f0;
-  }
-`;
-
-export const QuestionContainer = styled.div`
-  background-color: #03a9f4;
-  padding: 30px;
-  border-radius: 8px;
-  color: white;
-  position: relative;
 `;
 
 export const QuestionNumber = styled.p`
@@ -105,10 +54,105 @@ export const QuestionText = styled.h2`
   margin-bottom: 30px;
 `;
 
-export const OptionsGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
+export const ScoreText = styled.p`
+  font-size: 16px;
+  margin-bottom: 10px;
+`;
+
+export const ScoreValue = styled.p`
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+`;
+
+export const CongratsText = styled.p`
+  font-size: 16px;
+  margin-bottom: 30px;
+  max-width: 380px;
+  text-align: center;
+`;
+
+export const Description = styled.p`
+  font-size: 16px;
+  margin-bottom: 30px;
+  max-width: 380px;
+`;
+
+export const HeaderText = styled.h3`
+  text-align: center;
+  font-size: 18px;
+  margin-top: 5px;
+  color: #4caf50;
+`;
+
+export const FeedbackText = styled.p`
+  margin: 15px 0;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+`;
+
+//
+// BOTÕES REUTILIZÁVEIS
+//
+const BaseButton = styled.button`
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+`;
+
+export const PrimaryButton = styled(BaseButton)`
+  background-color: #03a9f4;
+  color: white;
+  padding: 10px 20px;
+
+  &:hover {
+    background-color: #0288d1;
+  }
+`;
+
+export const OutlineButton = styled(BaseButton)`
+  background-color: white;
+  color: #03a9f4;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+`;
+
+export const StartButton = styled(OutlineButton)`
+  padding: 10px 40px;
+  text-transform: uppercase;
+`;
+
+export const RestartButton = styled(OutlineButton)``;
+
+export const ContinueButton = styled.button`
+  background-color: #4caf50;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  float: right;
+  margin-top: 1.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
 `;
 
 export const OptionButton = styled.button`
@@ -121,18 +165,41 @@ export const OptionButton = styled.button`
   cursor: pointer;
   text-align: left;
   transition: all 0.2s ease;
-  
+
   &:hover {
     background-color: #e3f2fd;
+    transform: translateY(-4px); /* efeito flutuante */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* sombra suave */
   }
-  
-  ${props => props.selected && `
-    background-color: #0288d1;
-    color: white;
-  `}
+
+  ${({ selected }) =>
+    selected &&
+    css`
+      background-color: #0288d1;
+      color: white;
+    `}
 `;
 
-export const IntroContainer = styled.div`
+
+export const CloseButton = styled.button`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #757575;
+
+  &:hover {
+    color: #000;
+  }
+`;
+
+//
+// CONTAINERS ESPECÍFICOS
+//
+export const ResultContainer = styled.div`
   background-color: #03a9f4;
   padding: 40px 30px;
   border-radius: 8px;
@@ -141,32 +208,30 @@ export const IntroContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   min-height: 300px;
 `;
 
-export const Description = styled.p`
-  font-size: 16px;
-  margin-bottom: 30px;
-  max-width: 380px;
+export const QuestionContainer = styled.div`
+  background-color: #03a9f4;
+  padding: 30px;
+  border-radius: 8px;
+  color: white;
+  position: relative;
 `;
 
-export const StartButton = styled.button`
-  background-color: white;
-  color: #03a9f4;
-  border: none;
-  padding: 10px 40px;
-  border-radius: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 16px;
-  text-transform: uppercase;
-  
-  &:hover {
-    background-color: #f0f0f0;
-  }
+export const OptionsGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
 `;
 
+export const IntroContainer = styled(ResultContainer)`
+  justify-content: center;
+`;
+
+//
+// FEEDBACK MODAL
+//
 export const FeedbackOverlay = styled.div`
   position: fixed;
   top: 0;
@@ -190,47 +255,3 @@ export const FeedbackContainer = styled.div`
   position: relative;
 `;
 
-export const CloseButton = styled.button`
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  color: #757575;
-  
-  &:hover {
-    color: #000;
-  }
-`;
-
-export const HeaderText = styled.h3`
-  text-align: center;
-  font-size: 18px;
-  margin-top: 5px;
-  color: #4caf50;
-`;
-
-export const FeedbackText = styled.p`
-  margin: 15px 0;
-  text-align: center;
-  font-size: 14px;
-  line-height: 1.5;
-`;
-
-export const ContinueButton = styled.button`
-  background-color: #03a9f4;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  font-weight: 500;
-  cursor: pointer;
-  display: block;
-  margin: 0 auto;
-  
-  &:hover {
-    background-color: #0288d1;
-  }
-`;
