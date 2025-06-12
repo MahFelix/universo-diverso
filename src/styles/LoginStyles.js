@@ -7,28 +7,28 @@ export const LoginContainer = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 30px 20px;
+  padding: 20px;
   gap: 30px;
-  max-width: 420px;
   margin: 0 auto;
 
   .login-form-container {
     width: 100%;
+    max-width: 420px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    margin-top: 40px;
+    margin: 10px;
 
     h2 {
       font-size: 20px;
       color: var(--text-color);
-      font-weight: 500;
+      font-weight: 700;
     }
 
     p {
       font-size: 14px;
-      color: #666;
+      color: var(--text-color);
       margin-bottom: 20px;
     }
   }
@@ -39,7 +39,7 @@ export const LoginHeader = styled.div`
   align-items: center;
   gap: 10px;
 
-  .cap-icon {
+  .planet-logo {
     width: 120px;
     height: 120px;
   }
@@ -51,43 +51,21 @@ export const LoginHeader = styled.div`
   }
 `;
 
-export const LoginForm = styled.form`
-  width: 100%;
+export const FormItem = styled.form`
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  align-items: center;
+  align-self:center;
+  border-radius: 4px;
+  padding: 12px 16px;
+  justify-content: space-between;
 `;
 
 export const FormGroup = styled.div`
   width: 100%;
-
-  input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 14px;
-  }
 `;
 
-export const LoginButton = styled.button`
-  background-color: #000;
-  color: white;
-  border: none;
-  padding: 12px;
-  border-radius: 6px;
+export const InfoText = styled.span`
   font-size: 16px;
-  cursor: pointer;
-  width: 100%;
-`;
-
-export const SignupButton = styled.button`
-  background-color: transparent;
   color: var(--text-color);
-  border: 1px solid #ccc;
-  padding: 12px;
-  border-radius: 6px;
-  font-size: 14px;
-  cursor: pointer;
-  width: 100%;
+  font-weight: 600;
 `;
