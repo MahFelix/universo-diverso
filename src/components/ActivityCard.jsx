@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import {SportsEsportsOutlined,AutoStoriesOutlined, BookOutlined} from '@mui/icons-material';
 import {CardContainer, CardHeader, CardIcon, CardCategory, CardTitle, CardDescription, CardButton} from '../styles/ActivityCard';
 
@@ -27,8 +28,12 @@ const ActivityCard = ({
   const icon = getIconForType(type);
   const showProgress = progress !== undefined;
   const categoryText = showProgress ? `${progress}% concluídos` : type.toUpperCase();
+  const navigate = useNavigate();
 
-  
+  const handleClick = (event, path) => {
+    console.log(path);
+    navigate(path);
+  };
 
   return (
     <CardContainer bgColor={bgColor}>
@@ -39,13 +44,13 @@ const ActivityCard = ({
         <CardCategory>{categoryText}</CardCategory>
       </CardHeader>
 
-      <CardTitle color={textColor}>{title}</CardTitle>
+      <CardTitle color={textColor}><h3>{title}</h3></CardTitle>
 
       <CardDescription color={textColor}><p>{description}</p></CardDescription>
 
       <CardButton 
         color={textColor} 
-        onClick={onClick}
+        onClick={e=>{handleClick(e, {onClick})}}
         aria-label={`${buttonText} para atividade: ${title}`}
       >
         {buttonText}

@@ -22,6 +22,6 @@ export const SectionTitle = styled.h2`
 
 export const CardGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 2fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 2fr));
   gap: 16px;
 `;

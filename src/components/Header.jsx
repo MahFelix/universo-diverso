@@ -1,25 +1,18 @@
 import React, { useState } from 'react';
 import planetIcon from '../assets/planet.png';
-import IconA from '../assets/icon.png';
-import IconHome from '../assets/home.png';
-import IconProfile from '../assets/account_circle.png';
-import IconLogout from '../assets/arrow_back.png';
-import { Menu, MenuItem, Avatar, Button } from '@mui/material';
-import { MenuOutlined, VolumeUpOutlined, StarBorderRounded,  Logout, AccountCircle } from '@mui/icons-material';
-import { NavContainer, LogoContainer, HeaderLeft, MenuItemMobile, HeaderRight,UserAvatar, StyledMenu, BrandName, MenuButton, MenuList,PointsContainer, UserProfileButton } from '../styles/Header';
+import { useNavigate } from 'react-router-dom';
+import { MenuItem } from '@mui/material';
+import { MenuOutlined, LibraryAddCheckOutlined, StarBorderRounded,  Logout, AccountCircleOutlined, HomeOutlined, LogoutSharp } from '@mui/icons-material';
+import { NavContainer, HeaderLeft, HeaderRight, LogoContainer, BrandName, PointsContainer, StyledMenu, MenuButton } from '../styles/Header';
 
 const TopNav = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
 
-
-
-  const handleClick = (event) => {
+  const handleClick = (event, path) => {
     setAnchorEl(event.currentTarget);
+    navigate(path);
   };
 
   const handleClose = () => {
@@ -29,38 +22,52 @@ const TopNav = () => {
   return (
     <NavContainer>
       <HeaderLeft>
-        <div style={{ position: 'relative' }}>
-          <MenuButton
-            onClick={toggleMenu}
-            aria-expanded={isMenuOpen}
-            aria-label="Menu de navegação"
-          >
-            <MenuOutlined style={{ fontSize: '20px', marginRight: '8px' }} />
-          </MenuButton>
 
-          <MenuList $isOpen={isMenuOpen}>
-            <MenuItem> 
-              <img src={IconHome}></img>
-              <a href="/" onClick={() => setIsMenuOpen(false)}>Home</a>
-            </MenuItem>
+        <MenuButton
+          aria-label="Menu de navegação"
+          aria-controls={open ? 'user-menu' : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? 'true' : undefined}
+          onClick={handleClick}
+        >
+          <MenuOutlined/>
+        </MenuButton>
 
-              <MenuItemMobile onClick={handleClose}>
-            <img src={IconA} width={24}></img>
-              <a href="/activities" onClick={() => setIsMenuOpen(false)}>Atividades</a>
-            </MenuItemMobile>
+        <StyledMenu
+          id="user-menu"
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          slotProps={{
+            'aria-labelledby': 'menu-button',
+          }}
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'right',
+          }}
+          transformOrigin={{
+            vertical: 'top',
+            horizontal: 'right',
+          }}
+        >
+          <MenuItem onClick={e=>{handleClick(e, '/')}} >
+            <HomeOutlined sx={{ marginRight: 1}} />
+              Home
+          </MenuItem>
+          <MenuItem onClick={e=>{handleClick(e, '/profile')}} >
+            <AccountCircleOutlined sx={{ marginRight: 1}} />
+              Meu Perfil
+          </MenuItem>
+          <MenuItem onClick={e=>{handleClick(e, '/activities')}} >
+            <LibraryAddCheckOutlined sx={{ marginRight: 1}} />
+              Atividades
+          </MenuItem>
+          <MenuItem onClick={e=>{handleClick(e, '/login')}} >
+            <LogoutSharp sx={{ marginRight: 1 }} />
+              Sair
+          </MenuItem>
 
-            <MenuItem>
-             <img src={IconProfile}></img>
-              <a href="/profile" onClick={() => setIsMenuOpen(false)}>Meu Perfil</a>
-            </MenuItem>
-
-              <MenuItemMobile onClick={handleClose}>
-                 <img src={IconLogout}></img>
-              <a href="/signup" onClick={() => setIsMenuOpen(false)}>Sair</a>
-            </MenuItemMobile>
-
-          </MenuList>
-        </div>
+        </StyledMenu>
 
         <LogoContainer>
           <img src={planetIcon} alt="Universo Diverso Logo" className="logo" />
@@ -74,44 +81,6 @@ const TopNav = () => {
           <span>120 pontos</span>
         </PointsContainer>
 
-        <div>
-          <UserProfileButton
-            aria-label="menu do usuário"
-            aria-controls={open ? 'user-menu' : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? 'true' : undefined}
-            onClick={handleClick}
-          >
-            <UserAvatar alt="User" src="/user.jpg" />
-          </UserProfileButton>
-
-          <StyledMenu
-            id="user-menu"
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            MenuListProps={{
-              'aria-labelledby': 'user-button',
-            }}
-            anchorOrigin={{
-              vertical: 'bottom',
-              horizontal: 'right',
-            }}
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
-            }}
-          >
-            <MenuItem onClick={handleClose}>
-              <AccountCircle sx={{ marginRight: 1, color: '#54c1d3' }} />
-              Meu Perfil
-            </MenuItem>
-            <MenuItem onClick={handleClose}>
-              <Logout href="/"  sx={{ marginRight: 1, color: '#ff6b6b' }} />
-              Sair
-            </MenuItem>
-          </StyledMenu>
-        </div>
       </HeaderRight>
 
     </NavContainer>

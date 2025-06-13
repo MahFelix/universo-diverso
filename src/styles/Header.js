@@ -23,13 +23,13 @@ export const HeaderRight = styled.div`
   display: flex;
   align-items: center;
   gap: 16px;
+  padding: 0 20px;
 `;
 
 export const LogoContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
-
 
   .logo {
     width: 60px;
@@ -72,38 +72,11 @@ export const PointsContainer = styled.div`
   display: flex;
   align-items: center;
   background-color: #ffef62;
-  padding: 6px 12px;
+  padding: 6px 15px;
   border-radius: 20px;
   font-size: 14px;
   font-weight: 500;
   gap: 5px;
-`;
-export const UserProfileButton = styled.a`
-
-  && {
-    padding: 4px;
-    min-width: 0;
-    border-radius: 50%;
-    transition: transform 0.3s;
-    
-    &:hover {
-      transform: scale(1.1);
-    }
-
-      @media (max-width: 768px) {
-      display: none;
-  }
-  }
-`;
-
-export const UserAvatar = styled(Avatar)`
-  && {
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    border: 2px solid #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
 `;
 
 export const StyledMenu = styled(Menu)`
@@ -112,8 +85,6 @@ export const StyledMenu = styled(Menu)`
       min-width: 180px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       border-radius: 8px;
-      margin-top: 8px;
-     
     }
     
     .MuiMenuItem-root {
@@ -125,13 +96,7 @@ export const StyledMenu = styled(Menu)`
       }
     }
   }
-
-  
 `;
-
-export const StarImg = styled.img`
-  width: 60px;`
-
 
 export const MenuOutlined = styled.img`
   display: flex;
@@ -181,22 +146,6 @@ export const MenuButton = styled.a`
   }
 `;
 
-export const MenuList = styled.ul`
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background: white;
-  border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  position: absolute;
-  top: 122%;
-  right: 20;
-  width: 200px;
-  z-index: 100;
-  display: ${props => props.$isOpen ? 'block' : 'none'};
-  animation: ${slideDown} 0.3s ease-out forwards;
-
-`;
 
 export const MenuItem = styled.li`
   padding: 12px 16px;

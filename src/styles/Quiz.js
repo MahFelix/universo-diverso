@@ -4,7 +4,6 @@ import styled, { css } from "styled-components";
 // LAYOUT
 //
 export const Container = styled.div`
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -42,11 +41,6 @@ export const ProgressStep = styled.div`
 export const Title = styled.h1`
   font-size: 24px;
   margin-bottom: 20px;
-`;
-
-export const QuestionNumber = styled.p`
-  font-weight: bold;
-  margin-bottom: 15px;
 `;
 
 export const QuestionText = styled.h2`
@@ -100,28 +94,29 @@ const BaseButton = styled.button`
   border-radius: 4px;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.2s ease;
 `;
 
 export const PrimaryButton = styled(BaseButton)`
-  background-color: #03a9f4;
-  color: white;
+  background-color: #025379;
+  color: #fff;
   padding: 10px 20px;
 
   &:hover {
-    background-color: #0288d1;
+    color: #025379;
+    background-color: #fff;
   }
 `;
 
 export const OutlineButton = styled(BaseButton)`
-  background-color: white;
-  color: #03a9f4;
+  background-color: #fff;
+  color: #025379;
   padding: 10px 20px;
   border-radius: 20px;
   font-size: 16px;
 
   &:hover {
-    background-color: #f0f0f0;
+    color: #f0f0f0;
+    background-color: #70cdf8;
   }
 `;
 
@@ -134,49 +129,44 @@ export const RestartButton = styled(OutlineButton)``;
 
 export const ContinueButton = styled.button`
   background-color: #4caf50;
-  color: white;
+  color: #242424;
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 12px;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  float: right;
   margin-top: 1.5rem;
-  transition: background-color 0.3s ease, transform 0.2s ease;
 
   &:hover {
-    background-color: #45a049;
-    transform: translateY(-2px);
+    color: #45a049;
+    background-color: #fff;
   }
 
-  &:active {
-    transform: translateY(0);
-  }
 `;
 
 export const OptionButton = styled.button`
   background-color: white;
-  color: #03a9f4;
+  color: #025379;
   border: none;
   padding: 12px 15px;
   border-radius: 4px;
   font-weight: 500;
   cursor: pointer;
   text-align: left;
-  transition: all 0.2s ease;
 
   &:hover {
-    background-color: #e3f2fd;
-    transform: translateY(-4px); /* efeito flutuante */
+    color: white;
+    background-color: #025379;
+    transform: translateY(-4px); /* ef eito flutuante */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* sombra suave */
   }
 
   ${({ selected }) =>
     selected &&
     css`
-      background-color: #0288d1;
-      color: white;
+      color: #091b24;;
+      background-color: white;
     `}
 `;
 
@@ -203,7 +193,7 @@ export const ResultContainer = styled.div`
   background-color: #03a9f4;
   padding: 40px 30px;
   border-radius: 8px;
-  color: white;
+  color: #091b24;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -212,15 +202,20 @@ export const ResultContainer = styled.div`
 `;
 
 export const QuestionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
   background-color: #03a9f4;
   padding: 30px;
   border-radius: 8px;
-  color: white;
+  color: #091b24;
   position: relative;
 `;
 
 export const OptionsGrid = styled.div`
   display: grid;
+  justify-content: center;
+  width: 100%;
   grid-template-columns: 1fr;
   gap: 10px;
 `;

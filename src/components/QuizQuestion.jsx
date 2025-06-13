@@ -1,6 +1,5 @@
 import {
   QuestionContainer,
-  QuestionNumber,
   QuestionText,
   OptionsGrid,
   OptionButton,
@@ -17,8 +16,7 @@ function QuizQuestion({
 }) {
   return (
     <QuestionContainer role="region" aria-labelledby={`question-${question.id}`}>
-      <QuestionNumber>{question.id}.</QuestionNumber>
-      <QuestionText id={`question-${question.id}`}>{question.text}</QuestionText>
+      <QuestionText id={`question-${question.id}`}>{question.id}. {question.text}</QuestionText>
 
       <OptionsGrid>
         {question.options.map((option) => (

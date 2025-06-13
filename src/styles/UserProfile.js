@@ -31,12 +31,12 @@ export const ProfileAvatar = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 30px;
-  border: 2px solid #9c27b0;
+  border: 4px solid #9c27b0;
 `;
 
 export const AvatarPlaceholder = styled.div`
   color: #9c27b0;
-  font-size: 40px;
+  scale: 2.0;
 `;
 
 export const ProfileInfoContainer = styled.div`
@@ -61,12 +61,6 @@ export const InfoText = styled.span`
   color: #000;
 `;
 
-export const EditButton = styled.button`
-  background: none;
-  border: none;
-  color: #000;
+export const EditButton = styled.div`
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  font-size: 18px;
 `;

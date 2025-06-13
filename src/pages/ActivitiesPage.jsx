@@ -3,8 +3,8 @@ import ActivityCard from '../components/ActivityCard';
 import Header from '../components/Header';
 import {PageContainer, SectionContainer, SectionTitle, CardGrid} from '../styles/ActivitiesPage';
 
-// Dados das atividades (normalmente viriam de uma API)
-  const activitiesInProgress = [
+  // Dados das atividades (normalmente viriam de uma API)
+  export const activitiesInProgress = [
     {
       id: 1,
       bgColor: '#FF9800',
@@ -25,14 +25,15 @@ import {PageContainer, SectionContainer, SectionTitle, CardGrid} from '../styles
     }
   ];
 
-  const newActivities = [
+  export const newActivities = [
     {
       id: 3,
       bgColor: '#03A9F4',
       type: 'Tutorial',
       title: 'Questão de Acessibilidade',
       description: 'Entenda as questões e desafios da acessibilidade digital para usuários com deficiência',
-      buttonText: 'Clique para aprender'
+      buttonText: 'Clique para aprender',
+      onClick: '/quiz'
     },
     {
       id: 4,
@@ -84,7 +85,7 @@ import {PageContainer, SectionContainer, SectionTitle, CardGrid} from '../styles
     }
   ];
 
-  const completedActivities = [
+  export const completedActivities = [
     {
       id: 10,
       bgColor: '#E040FB',

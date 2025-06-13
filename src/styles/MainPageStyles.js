@@ -2,18 +2,16 @@ import styled from 'styled-components';
 
 export const AppContainer = styled.div`
 
- margin: 0 auto;
-  display: flex;
-  flex-direction: ${props => props.isMobile ? 'column-reverse' : 'row'};
+  margin: 0 auto;
+  flex: 1;
   min-height: 100vh;
 
 `;
 
 export const MainContent = styled.main`
- margin: 0 auto;
+  margin: 0 auto;
   flex: 1;
   padding: ${props => props.isMobile ? '0 16px 70px' : '0 24px 24px'};
-  background-color: #ffffff;
 `;
 
 export const WelcomeSection = styled.section`
@@ -86,14 +84,7 @@ export const SectionA = styled.div`
   margin-right: 20px;
   gap: 5px;
   margin-bottom: 10px;
-
-
-  h3 {
-    font-size: 18px;
-    font-weight: 500;
-    margin-top: 6px;
-  }
-
+  align-items: center;
   ;`
 
 export const ActivitiesGrid = styled.div`

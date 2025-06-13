@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import { List, Planet, SpeakerHigh, Star, PencilSimple, User } from '@phosphor-icons/react';
 import Header from '../components/Header';
+import {PersonOutlined, EditOutlined} from '@mui/icons-material';
 import {ProfileContainer, ProfileContent, ProfileTitle, ProfileAvatar, AvatarPlaceholder, 
   ProfileInfoContainer, ProfileInfoItem, InfoText, EditButton} from '../styles/UserProfile';
 
@@ -26,24 +26,24 @@ const UserProfileComponent = () => {
       <ProfileContent>
         <ProfileTitle>Meu Perfil</ProfileTitle>
         
-        <ProfileAvatar>
-          <AvatarPlaceholder>
-            <User weight="light" />
+        <ProfileAvatar aria-label="Avatar genérico">
+          <AvatarPlaceholder >
+            <PersonOutlined/>
           </AvatarPlaceholder>
         </ProfileAvatar>
         
         <ProfileInfoContainer>
-          <ProfileInfoItem>
+          <ProfileInfoItem aria-label="Nome do usuário">
             <InfoText>{user.name}</InfoText>
-            <EditButton onClick={() => handleEdit('name')}>
-              <PencilSimple weight="bold" />
+            <EditButton onClick={() => handleEdit('name')} aria-label="Botão de editar" >
+              <EditOutlined aria-label="Botão de editar" weight="bold" />
             </EditButton>
           </ProfileInfoItem>
           
-          <ProfileInfoItem>
+          <ProfileInfoItem aria-label="e-mail do usuário">
             <InfoText>{user.email}</InfoText>
-            <EditButton onClick={() => handleEdit('email')}>
-              <PencilSimple weight="bold" />
+            <EditButton onClick={() => handleEdit('email')} aria-label="Botão de editar">
+              <EditOutlined aria-label="Botão de editar" weight="bold" />
             </EditButton>
           </ProfileInfoItem>
         </ProfileInfoContainer>
