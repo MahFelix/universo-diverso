@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     --blue-card: #3fb4fd;
     --red-card: #EA787E;
     --light-green-card: #50c05f;
-    --progress-violet: #9b5de5;
+    --progress-violet:rgb(125, 54, 212);
     --sidebar-bg: #ffffff;
     --text-color: #333333;
     --card-text: #ffffff;
@@ -37,7 +37,7 @@ export const GlobalStyle = createGlobalStyle`
     --red-button-color-hover: rgb(255, 64, 64);
     --red-button-text-hover: #272727;
 
-    --blue-button-color: #046d9e;
+    --blue-button-color:rgb(3, 104, 151);
     --blue-button-text: #ffffff;
     --blue-button-hover: #a9d8ee;
     --blue-button-color-hover: #d9eaf1;

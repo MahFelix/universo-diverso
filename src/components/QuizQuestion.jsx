@@ -52,7 +52,7 @@ function QuizQuestion({
 
       {showFeedback && (
         <div className="feedbackDiv">
-          <FeedbackText id={`feedback da questão`}>{feedback}</FeedbackText>
+          <FeedbackText tabIndex="0" aria-label={`feedback da questão`}>{feedback}</FeedbackText>
           <ContinueButton role="button" aria-labelledby="Botão para próxima pergunta" onClick={onContinue}>Próxima pergunta</ContinueButton>
         </div>
       )}
