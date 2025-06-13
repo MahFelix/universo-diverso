@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { GlobalStyle } from "./styles/globalStyles";
 import Login from "./pages/Login";
 import MainPage from "./pages/MainPage";
-import SignUpForm from "./pages/SignUpForm";
+import SignUpForm from "./pages/SignUp";
 import UserProfileComponent from "./pages/UserProfile";
 import ActivitiesPage from "./pages/ActivitiesPage";
 import QuizContainer from "./pages/QuizContainer";

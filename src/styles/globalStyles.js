@@ -5,17 +5,18 @@ export const GlobalStyle = createGlobalStyle`
     --primary-color: #272727;
     --secondary-color: #e7e7e7;
     --background-color: #f5f5f5;
+    --secondary-background-color: #d0f2f7;
+    --sidebar-background-color: #ffffff;
+    --input-border-color: #747373;
+
     --orange-card: #FFA91D;
     --green-card: #2af742;
     --blue-card: #3fb4fd;
     --red-card: #EA787E;
     --light-green-card: #50c05f;
+
     --progress-violet:rgb(125, 54, 212);
-    --sidebar-bg: #ffffff;
-    --text-color: #333333;
-    --card-text: #ffffff;
-    --login-bg: #d0f2f7;
-    --border-input: #747373;
+    
 
     --primary-button-color: #272727;
     --primary-button-text: #FFFFFF;
@@ -71,6 +72,19 @@ export const GlobalStyle = createGlobalStyle`
     background: var(--primary-button-color-hover);
     color: var(--primary-button-text-hover);
   }
+
+  FormGroup {
+    display: flex;
+    align-items: center;
+    align-self:center;
+    border-radius: 4px;
+    padding: 12px 16px;
+    justify-content: space-between;
+  }
+  
+ FormContainer {
+    width: 100%;
+  }
   
   Link {
     width: '100%';
@@ -83,7 +97,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 12px;
     border: 1px solid ;
     border-radius: 6px;
-    border-color: var(--border-input);
+    border-color: var(--input-border-color);
     font-size: 14px;
   }
 

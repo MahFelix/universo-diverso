@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import planetIcon from '../assets/planet.png';
-import {SignUpContainer, Logo, PlanetIcon, BrandName, FormContainer, FormTitle,
-  FormGroup, Input, RadioContainer, CreateButton, InfoText} from '../styles/SignUp';
+import {SignUpContainer, Logo, BrandName, FormContainer, FormTitle,
+  FormGroup, CreateButton, InfoText} from '../styles/SignUp';
 
-const SignUpForm = () => {
+const SignUp = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -36,24 +36,25 @@ const SignUpForm = () => {
 
   return (
     <SignUpContainer>
-      <Logo>
+      <Logo aria-labelledby="Logo">
        <img src={planetIcon} alt="Universo Diverso Logo" className="logo" />
-        <BrandName>Universo Diverso</BrandName>
+        <BrandName tabIndex="0" >Universo Diverso</BrandName>
       </Logo>
       
       <FormContainer>
-        <FormTitle>Crie uma conta</FormTitle>
+        <FormTitle  tabIndex="0" >Criando uma nova conta</FormTitle>
         
         <form onSubmit={handleSubmit}>
-          <FormGroup>
+          <FormGroup aria-label="formulário">
        
-            <InfoText>Nome</InfoText>
-            <Input
+            <InfoText>Nome:</InfoText>
+            <input
               type="text"
-              name="name"
+              name="nome"
               value={formData.name}
               onChange={handleChange}
-              placeholder="nome"
+              placeholder="Digite seu nome" 
+              aria-label="Digite seu nome"
               required
             />
           </FormGroup>
@@ -61,12 +62,13 @@ const SignUpForm = () => {
           <FormGroup>
    
             <InfoText>E-mail:</InfoText>
-            <Input
+            <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="email@domain.com"
+              placeholder="Digite seu e-mail" 
+              aria-label="Digite seu e-mail"
               required
             />
           </FormGroup>
@@ -74,33 +76,37 @@ const SignUpForm = () => {
           <FormGroup>
      
             <InfoText>Senha:</InfoText>
-            <Input
+            <input
               type="password"
-              placeholder='Crie uma senha'
               name="password"
               value={formData.password}
               onChange={handleChange}
+              placeholder="Digite uma senha" 
+              aria-label="Digite uma senha"
               required
             />
           </FormGroup>
           
           <FormGroup>
             <InfoText>Repita a senha:</InfoText>
-            <Input
+            <input
               type="password"
-              placeholder='Repita a senha'
               name="confirmPassword"
               value={formData.confirmPassword}
               onChange={handleChange}
+              placeholder="Digite a senha novamente" 
+              aria-label="Digite a senha novamente"
               required
             />
           </FormGroup>
           
-          <CreateButton type="submit">Criar Conta</CreateButton>
+          <FormGroup>
+            <p/>  <button role="button" type="submit" >Criar Conta</button> <p/>
+          </FormGroup>
         </form>
       </FormContainer>
     </SignUpContainer>
   );
 };
 
-export default SignUpForm;
+export default SignUp;

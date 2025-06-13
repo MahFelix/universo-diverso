@@ -30,7 +30,7 @@ export const WelcomeSection = styled.section`
   h2 {
     font-size: ${props => props.isMobile ? '18px' : '20px'};
     margin-bottom: 8px;
-    color: var(--text-color);
+    color: var(--primary-color);
   }
 `;
 

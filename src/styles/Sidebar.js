@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const SidebarContainer = styled.aside`
   width: ${props => props.isMobile ? '100%' : '240px'};
-  background-color: var(--sidebar-bg);
+  background-color: var(--sidebar-background-color);
   padding: 20px;
   display: flex;
   flex-direction: ${props => props.isMobile ? 'row' : 'column'};

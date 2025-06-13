@@ -1,5 +1,5 @@
 // MainPage.js
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import ActivityCard from '../components/ActivityCard';
 import rocketIllustration from '../assets/foguete.png';
@@ -34,9 +34,9 @@ const MainPage = () => {
       <MainContent isMobile={isMobile}>
                
         <WelcomeSection isMobile={isMobile}>
-          <WelcomeText>
-            <h2>Bem-vindo de volta, Jogador!</h2>
-            <p>Continue sua jornada de aprendizado e diversão!</p>
+          <WelcomeText tabIndex="0" aria-label="Bem-vindo">
+            <h2 id="bem-vindo">Bem-vindo de volta, Jogador!</h2>
+            <p tabIndex="0">Continue sua jornada de aprendizado e diversão!</p>
           </WelcomeText>
           <WelcomeImage>
             <img src={rocketIllustration} alt="Ilustração de foguete" />
@@ -46,8 +46,8 @@ const MainPage = () => {
         <ActivitiesSection>
           <SectionHeader>
             <SectionA>
-            <LibraryAddCheckOutlined/>
-            <h3>Suas Atividades</h3>
+            <LibraryAddCheckOutlined aria-label="ícone de atividades"/>
+            <h3 tabIndex="0">Suas Atividades</h3>
             </SectionA>
          <a className="view-all" href="/activities">Ver todas</a>
           </SectionHeader>
