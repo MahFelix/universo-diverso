@@ -33,7 +33,7 @@ import {PageContainer, SectionContainer, SectionTitle, CardGrid} from '../styles
       bgColor: '#03A9F4',
       type: 'Tutorial',
       title: 'Questão de Acessibilidade',
-      description: 'Entenda as questões e desafios da acessibilidade digital para usuários com deficiência',
+      description: 'Entenda as questões e desafios da acessibilidade para usuários com deficiência',
       buttonText: 'Clique para aprender',
       onClick: '/quiz'
     },
