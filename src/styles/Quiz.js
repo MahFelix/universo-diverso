@@ -8,7 +8,7 @@ export const Container = styled.div`
   flex-direction: column;
   height: 100vh;
   width: 100vw;
-  background-color: #03a9f4;
+  background-color: var(--blue-card);
   padding: 1rem;
   box-sizing: border-box;
   overflow: hidden;
@@ -31,14 +31,14 @@ export const ProgressStep = styled.div`
   margin: 0 4px;
   border-radius: 8px;
   font-weight: bold;
-  background-color: ${(props) => (props.active ? "#9b5de5" : "#e0e0e0")};
-  color: ${(props) => (props.active ? "#fff" : "#555")};
+  background-color: ${(props) => (props.active ? "var(--progress-violet)" : "var(--secondary-color)")};
+  color: ${(props) => (props.active ? "var(--secondary-color)" : "var(--primary-color)")};
 `;
 
 //
 // TEXTOS
 //
-export const Title = styled.h1`
+export const Title = styled.h1` 
   font-size: 24px;
   margin-bottom: 20px;
 `;
@@ -76,47 +76,52 @@ export const HeaderText = styled.h3`
   text-align: center;
   font-size: 18px;
   margin-top: 5px;
-  color: #4caf50;
+  color: var(--green-button-color);
+`;
+
+export const feedbackDiv = styled.div `
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  align-items: center;      
+  gap: 1rem;
+  max-width: 500px;
 `;
 
 export const FeedbackText = styled.p`
-  margin: 15px 0;
+  font-weight: bold;
   text-align: center;
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 16px;
+  padding: 40px;
 `;
 
 //
 // BOTÕES REUTILIZÁVEIS
 //
 const BaseButton = styled.button`
-  border: none;
-  border-radius: 4px;
   font-weight: bold;
-  cursor: pointer;
 `;
 
 export const PrimaryButton = styled(BaseButton)`
-  background-color: #025379;
-  color: #fff;
+  background-color: var(--blue-button-color);
+  color: var(--blue-button-text);
   padding: 10px 20px;
 
   &:hover {
-    color: #025379;
-    background-color: #fff;
+    color: var(--blue-button-text-hover);
+    background-color: var(--blue-button-color-hover);
   }
 `;
 
 export const OutlineButton = styled(BaseButton)`
-  background-color: #fff;
-  color: #025379;
+  background-color: var(--blue-button-text);
+  color: var(--blue-button-color);
   padding: 10px 20px;
   border-radius: 20px;
-  font-size: 16px;
 
   &:hover {
-    color: #f0f0f0;
-    background-color: #70cdf8;
+    color: var(--blue-button-text-hover);
+    background-color: var(--blue-button-color-hover);
   }
 `;
 
@@ -128,61 +133,51 @@ export const StartButton = styled(OutlineButton)`
 export const RestartButton = styled(OutlineButton)``;
 
 export const ContinueButton = styled.button`
-  background-color: #4caf50;
-  color: #242424;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 12px;
-  font-size: 1rem;
+  background-color: var(--secondary-button-color);
+  color: var(--secondary-button-text);
   font-weight: bold;
-  cursor: pointer;
-  margin-top: 1.5rem;
 
   &:hover {
-    color: #45a049;
-    background-color: #fff;
+    color: var(--secondary-button-text-hover);
+    background-color: var(--secondary-button-color-hover);
   }
-
 `;
 
 export const OptionButton = styled.button`
-  background-color: white;
-  color: #025379;
-  border: none;
-  padding: 12px 15px;
+  background-color: var(--blue-button-text);
+  color: var(--blue-button-color);
+  height: 50px;
+  padding: 10px;
   border-radius: 4px;
-  font-weight: 500;
-  cursor: pointer;
+  font-weight: bold;
   text-align: left;
+  align-itens: center;
+  justify-content: space-between;
 
   &:hover {
-    color: white;
-    background-color: #025379;
-    transform: translateY(-4px); /* ef eito flutuante */
+    color: var(--primary-color);
+    background-color: var(--blue-button-color-hover);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* sombra suave */
   }
 
   ${({ selected }) =>
     selected &&
     css`
-      color: #091b24;;
-      background-color: white;
+      color:var(--primary-color);
+      background-color: var(--secondary-color);
     `}
 `;
-
 
 export const CloseButton = styled.button`
   position: absolute;
   top: 10px;
   right: 10px;
   background: none;
-  border: none;
   font-size: 20px;
-  cursor: pointer;
-  color: #757575;
+  color: var(--primary-color);
 
   &:hover {
-    color: #000;
+    color: #000000;
   }
 `;
 
@@ -190,10 +185,10 @@ export const CloseButton = styled.button`
 // CONTAINERS ESPECÍFICOS
 //
 export const ResultContainer = styled.div`
-  background-color: #03a9f4;
+  background-color: var(--blue-card);
   padding: 40px 30px;
   border-radius: 8px;
-  color: #091b24;
+  color: var(--primary-color);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -205,19 +200,19 @@ export const QuestionContainer = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-color: #03a9f4;
+  background-color: var(--blue-card);
   padding: 30px;
-  border-radius: 8px;
-  color: #091b24;
+  color: var(--primary-color);
   position: relative;
 `;
 
 export const OptionsGrid = styled.div`
-  display: grid;
-  justify-content: center;
-  width: 100%;
-  grid-template-columns: 1fr;
-  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  align-items: center;      
+  height: 100%;             
+  gap: 1rem;
 `;
 
 export const IntroContainer = styled(ResultContainer)`

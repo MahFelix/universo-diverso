@@ -1,9 +1,12 @@
+import { CheckBoxOutlined,  } from '@mui/icons-material';
+
 import {
   QuestionContainer,
   QuestionText,
   OptionsGrid,
   OptionButton,
   ContinueButton,
+  FeedbackText
 } from "../styles/Quiz";
 
 function QuizQuestion({
@@ -16,7 +19,9 @@ function QuizQuestion({
 }) {
   return (
     <QuestionContainer role="region" aria-labelledby={`question-${question.id}`}>
-      <QuestionText id={`question-${question.id}`}>{question.id}. {question.text}</QuestionText>
+      <QuestionText tabIndex="0"  id={`question-${question.id}`} >
+          {question.id}. {question.text}
+      </QuestionText>
 
       <OptionsGrid>
         {question.options.map((option) => (
@@ -25,43 +30,30 @@ function QuizQuestion({
             selected={selectedAnswer === option.id}
             onClick={() => !showFeedback && onAnswerSelect(option.id)}
             aria-checked={selectedAnswer === option.id}
-            role="radio"
+            role="option"
             style={{
               backgroundColor:
                 showFeedback
                   ? option.id === question.correctAnswer
-                    ? "#4CAF50"
+                    ? "var(--green-button-color)"
                     : selectedAnswer === option.id
-                    ? "#B22222"
+                    ? "var(--red-button-color)"
                     : ""
                   : "",
-              color: showFeedback && option.id === question.correctAnswer ? "#FFFFFF" : "",
+              color: showFeedback && option.id == question.correctAnswer ? "#272727" : "",
               cursor: showFeedback ? "default" : "pointer",
             }}
           >
             {option.text}
-            {showFeedback && (
-              <>
-                {option.id === question.correctAnswer && (
-                  <span role="img" aria-label="resposta correta">
-                    ✅
-                  </span>
-                )}
-                {selectedAnswer === option.id && option.id !== question.correctAnswer && (
-                  <span role="img" aria-label="resposta errada">
-                    ❌
-                  </span>
-                )}
-              </>
-            )}
+            {showFeedback}
           </OptionButton>
         ))}
       </OptionsGrid>
 
       {showFeedback && (
-        <div className="feedback-popup">
-          <p>{feedback}</p>
-          <ContinueButton onClick={onContinue}>Próxima pergunta</ContinueButton>
+        <div className="feedbackDiv">
+          <FeedbackText id={`feedback da questão-${feedback}`}>{feedback}</FeedbackText>
+          <ContinueButton  aria-label="Botão para próxima pergunta" onClick={onContinue}>Próxima pergunta</ContinueButton>
         </div>
       )}
     </QuestionContainer>

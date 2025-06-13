@@ -2,24 +2,45 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   :root {
-    --primary-color: #54c1d3;
-    --secondary-color: #88e0ef;
-    --orange-card: #FFA91D
-    ;
-    --green-card: #2af742;
-    --blue-card: #1ba7ff;
-    --red-card: #EA787E;
-    --light-green-card:#50c05f;
+    --primary-color: #272727;
+    --secondary-color: #e7e7e7;
     --background-color: #f5f5f5;
+    --orange-card: #FFA91D;
+    --green-card: #2af742;
+    --blue-card: #3fb4fd;
+    --red-card: #EA787E;
+    --light-green-card: #50c05f;
+    --progress-violet: #9b5de5;
     --sidebar-bg: #ffffff;
-    --text-color: #333;
+    --text-color: #333333;
     --card-text: #ffffff;
     --login-bg: #d0f2f7;
-    --button-color: #000;
-    --button-text: #FFF;
-    --button-hover: #333;
-    --button-text-hover: #FFF;
-    --border-input:#747373;
+    --border-input: #747373;
+
+    --primary-button-color: #272727;
+    --primary-button-text: #FFFFFF;
+    --primary-button-color-hover: #3d3d3d;
+    --primary-button-text-hover: #FFFFFF;
+
+    --secondary-button-color: #FFFFFF;
+    --secondary-button-text: #272727;
+    --secondary-button-color-hover: #d6d5d5;
+    --secondary-button-text-hover: #272727;
+    
+    --green-button-color: #15971a;
+    --green-button-text: #eeeeee;
+    --green-button-color-hover:rgb(31, 179, 35);
+    --green-button-text-hover: #eeeeee;
+
+    --red-button-color:rgb(255, 38, 38);
+    --red-button-text: #272727;
+    --red-button-color-hover: rgb(255, 64, 64);
+    --red-button-text-hover: #272727;
+
+    --blue-button-color: #046d9e;
+    --blue-button-text: #ffffff;
+    --blue-button-color-hover:rgb(130, 162, 177);
+    --blue-button-text-hover:rgb(216, 216, 216);
   }
 
   * {
@@ -38,16 +59,16 @@ export const GlobalStyle = createGlobalStyle`
     width: 300px;
     height: 45px;
     cursor: pointer;
-    background: var(--button-color);
-    color: var(--button-text);
+    background: var(--primary-button-color);
+    color: var(--primary-button-text);
     font-size: 16px;
     border: none;
     border-radius: 6px;
   }
   
   button:hover {
-    background: var(--button-hover);
-    color: var(--button-text-hover);
+    background: var(--primary-button-color-hover);
+    color: var(--primary-button-text-hover);
   }
   
   Link {

@@ -8,67 +8,98 @@ import { Container, ProgressBar, ProgressStep } from "../styles/Quiz";
 const quizData = {
   title: "Quiz de Acessibilidade",
   description:
-    "Vamos aprender juntos sobre como tornar a internet um lugar legal para todos!",
+    "Entenda as questões e desafios da acessibilidade digital para usuários com deficiência",
   questions: [
     {
       id: 1,
-      text: "Por que é importante que todos possam usar a internet?",
+      text: "O que é um intérprete de Libras?",
       options: [
-        { id: "a", text: "Porque é divertido compartilhar" },
-        { id: "b", text: "Porque tem muitos jogos legais" },
-        { id: "c", text: "Porque podemos aprender muitas coisas" },
-        { id: "d", text: "Todas as respostas estão certas!" },
+        { id: "a", text: "Uma pessoa que conta histórias" },
+        { id: "b", text: "Uma pessoa que fala com os surdos através de sinais" },
+        { id: "c", text: "Um mágico que faz truques com as mãos" },
+        { id: "d", text: "Uma pessoa que dança" },
       ],
-      correctAnswer: "d",
+      correctAnswer: "b",
       feedback:
-        "Isso mesmo! A internet é para todos se divertirem, aprenderem e compartilharem juntos! 🌈",
+        "Isso mesmo! A Libras é a língua de sinais brasileira, usada para que as pessoas surdas possam se comunicar!",
       incorrectFeedback:
-        "Quase lá! Lembre-se que a internet tem muitas coisas legais para todos! 😊",
+        "Não foi dessa vez. Um intérprete de Libras é pessoa que fala com os surdos através de sinais. A Libras é a língua de sinais brasileira, usada para que as pessoas surdas possam se comunicar!",
     },
     {
       id: 2,
-      text: "Como podemos ajudar um amigo que não enxerga a usar o computador?",
+      text: "Por que devemos perguntar como ajudar alguém, em vez de supor?",
       options: [
-        { id: "a", text: "Com um leitor de tela especial" },
-        { id: "b", text: "Descrevendo as imagens" },
-        { id: "c", text: "Usando sons e músicas" },
-        { id: "d", text: "Todas as formas ajudam!" },
-      ],
-      correctAnswer: "d",
-      feedback:
-        "Parabéns! Existem várias formas de ajudar nossos amigos a usarem o computador! 🌟",
-      incorrectFeedback:
-        "Tente novamente! Existem muitas maneiras de ajudar nossos amigos. 🤗",
-    },
-    {
-      id: 3,
-      text: "Qual é a melhor forma de fazer um vídeo para todos os amigos?",
-      options: [
-        { id: "a", text: "Colocando legendas coloridas" },
-        { id: "b", text: "Usando uma linguagem simples" },
-        { id: "c", text: "Falando devagar e claro" },
-        { id: "d", text: "Todas as opções juntas!" },
-      ],
-      correctAnswer: "d",
-      feedback:
-        "Isso mesmo! Quanto mais formas diferentes de entender o vídeo, melhor para todos! 🎥✨",
-      incorrectFeedback:
-        "Continue tentando! Pense em como todos os amigos podem entender o vídeo. 🎬",
-    },
-    {
-      id: 4,
-      text: "O que é acessibilidade?",
-      options: [
-        { id: "a", text: "É um jogo muito legal" },
-        { id: "b", text: "É uma forma de fazer amigos" },
-        { id: "c", text: "É deixar tudo fácil para todos" },
-        { id: "d", text: "É um tipo de brincadeira" },
+        { id: "a", text: "Porque é desinteressante" },
+        { id: "b", text: "Para evitar conversas" },
+        { id: "c", text: "Para garantir que a ajuda realmente atenda às necessidades da pessoa" },
+        { id: "d", text: "Porque só algumas pessoas gostam de ajuda" },
       ],
       correctAnswer: "c",
       feedback:
-        "Certinho! Acessibilidade é fazer com que todos possam participar facilmente! 🌈✨",
+        "Isso mesmo! Perguntar é uma maneira respeitosa de oferecer apoio!",
       incorrectFeedback:
-        "Quase lá! Pense em como podemos ajudar todos a participarem juntos! 🤝",
+        "Não foi dessa vez. Devemos perguntar antes de ajudar alguém, para garantir que a ajuda realmente atenda às necessidades da pessoa perguntar é uma maneira respeitosa de oferecer apoio!",
+    },
+    {
+      id: 3,
+      text: "O que é acessibilidade digital",
+      options: [
+        { id: "a", text: "Uma maneira de conectar computadores" },
+        { id: "b", text: "Aumentar a velocidade de internet" },
+        { id: "d", text: "Um novo tipo de jogo" },
+        { id: "d", text: "Garantir que pessoas com diferentes habilidades possam usar sites e aplicativos" },
+
+      ],
+      correctAnswer: "d",
+      feedback:
+        "Isso mesmo! A acessibilidade digital é essencial para todos terem acesso à informação online!",
+      incorrectFeedback:
+        "Não foi dessa vez. Acessibilidade digital é garantir que pessoas com diferentes habilidades possam usar sites e aplicativos a acessibilidade digital é essencial para todos terem acesso à informação online!",
+    },
+    {
+      id: 4,
+      text: "O que podemos fazer se um amigo autista não quiser participar de uma atividade?",
+      options: [
+        { id: "a", text: "Forçá-lo a ir" },
+        { id: "b", text: "Respeitar sua escolha e oferecer apoio, se ele mudar de ideia" },
+        { id: "c", text: "Falar mal dele" },
+        { id: "d", text: "Ignorar o que ele sente" },
+      ],
+      correctAnswer: "b",
+      feedback:
+        "Isso mesmo! É essencial respeitar as decisões de cada pessoa e ser um amigo compreensivo!",
+      incorrectFeedback:
+        "Não foi dessa vez. Se seu amigo não quiser participar, você deve respeitar sua escolha e oferecer apoio, se ele mudar de ideia. É essencial respeitar as decisões de cada pessoa e ser um amigo compreensivo!",
+    },
+    {
+      id: 5,
+      text: "Por que é importante ter legendas em filmes?",
+      options: [
+        { id: "a", text: "Porque é bonito" },
+        { id: "b", text: "Para que pessoas surdas ou com dificuldades auditivas possam entender e aproveitar o filme" },
+        { id: "c", text: "Para que as pessoas que falam outras línguas possam entender" },
+        { id: "d", text: " Apenas para adicionar informações" },
+      ],
+      correctAnswer: "b",
+      feedback:
+        "Isso mesmo!  As legendas garantem que todos possam aproveitar as histórias contadas nos filmes!",
+      incorrectFeedback:
+        "Não foi dessa vez. As legendas são importantes para que pessoas surdas ou com dificuldades auditivas possam entender e aproveitar o filme. Elas garantem que todos possam aproveitar as histórias contadas nos filmes!",
+    },
+    {
+      id: 6,
+      text: "Como as rampas ajudam as pessoas?",
+      options: [
+        { id: "a", text: "Elas não ajudam" },
+        { id: "b", text: "Elas são perigosas" },
+        { id: "c", text: "Elas servem apenas para os cães" },
+        { id: "d", text: "Elas permitem que pessoas com dificuldades de mobilidade entrem em locais altos" },
+      ],
+      correctAnswer: "d",
+      feedback:
+        "Isso mesmo! Elas permitem que pessoas com dificuldades de mobilidade entrem em locais altos. Rampas são essenciais para garantir que todos consigam acessar diferentes lugares!",
+      incorrectFeedback:
+        "Não foi dessa vez. As rampas permitem que pessoas com dificuldades de mobilidade entrem em locais altos. Rampas são essenciais para garantir que todos consigam acessar diferentes lugares!",
     },
   ],
 };
@@ -155,7 +186,7 @@ function QuizContainer() {
             path={`questao/${question.id}`}
             element={
               <>
-                <ProgressBar>
+                <ProgressBar id={`question-${question.id}`}>
                   <ProgressStep active={currentQuestion >= 0}>Novo jogo</ProgressStep>
 
                   {quizData.questions.map((_, index) => (
