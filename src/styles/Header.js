@@ -56,8 +56,13 @@ export const MenuItemMobile = styled.div`
   }
 `;
 
+export const BannerWebsite = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
 
-export const BrandName = styled.div`
+export const BrandName = styled.h2`
   font-size: 18px;
   color: #000;
   font-weight: 600;

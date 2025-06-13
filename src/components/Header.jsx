@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import planetIcon from '../assets/planet.png';
 import { useNavigate } from 'react-router-dom';
 import { MenuItem } from '@mui/material';
-import { MenuOutlined, LibraryAddCheckOutlined, StarBorderRounded,  Logout, AccountCircleOutlined, HomeOutlined, LogoutSharp } from '@mui/icons-material';
-import { NavContainer, HeaderLeft, HeaderRight, LogoContainer, BrandName, PointsContainer, StyledMenu, MenuButton } from '../styles/Header';
+import { MenuOutlined, LibraryAddCheckOutlined, StarBorderRounded,  AccountCircleOutlined, HomeOutlined, LogoutSharp } from '@mui/icons-material';
+import { NavContainer, HeaderLeft, HeaderRight, LogoContainer, BannerWebsite, BrandName, PointsContainer, StyledMenu, MenuButton } from '../styles/Header';
 
 const TopNav = () => {
   const navigate = useNavigate();
@@ -24,6 +24,7 @@ const TopNav = () => {
       <HeaderLeft>
 
         <MenuButton
+          tabIndex="0"
           aria-label="Menu de navegação"
           aria-controls={open ? 'user-menu' : undefined}
           aria-haspopup="true"
@@ -69,16 +70,19 @@ const TopNav = () => {
 
         </StyledMenu>
 
-        <LogoContainer>
-          <img src={planetIcon} alt="Universo Diverso Logo" className="logo" />
-        </LogoContainer>
-        <BrandName>Universo Diverso</BrandName>
+        <BannerWebsite tabIndex="0" aria-label="Banner do Universo Diverso"> 
+          <LogoContainer>
+            <img src={planetIcon} tabIndex="0" alt="Universo Diverso Logo" className="logo" />
+          </LogoContainer>
+          <BrandName tabIndex="0" >Universo Diverso</BrandName>
+        </BannerWebsite>
+        
       </HeaderLeft>
 
       <HeaderRight>
-        <PointsContainer aria-label="Pontuação do usuário" >
-          <StarBorderRounded aria-label="Estrela" />
-          <span>120 pontos</span>
+        <PointsContainer tabIndex="0" aria-label="Pontuação do usuário" >
+          <StarBorderRounded tabIndex="0" aria-label="Estrela" />
+          <span tabIndex="0" aria-label="Quantidade de pontos">120 pontos</span>
         </PointsContainer>
 
       </HeaderRight>
