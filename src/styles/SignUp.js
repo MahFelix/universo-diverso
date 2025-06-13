@@ -121,3 +121,8 @@ export const CreateButton = styled.button`
 `;
 
 
+export const InfoText = styled.span`
+  font-size: 16px;
+  color: var(--text-color);
+  font-weight: 600;
+`;

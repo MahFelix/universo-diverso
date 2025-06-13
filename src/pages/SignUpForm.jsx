@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import planetIcon from '../assets/planet.png';
 import {SignUpContainer, Logo, PlanetIcon, BrandName, FormContainer, FormTitle,
-  FormGroup, Label, Input, RadioContainer, CreateButton} from '../styles/SignUp';
+  FormGroup, Input, RadioContainer, CreateButton, InfoText} from '../styles/SignUp';
 
 const SignUpForm = () => {
   const [formData, setFormData] = useState({
@@ -46,7 +46,8 @@ const SignUpForm = () => {
         
         <form onSubmit={handleSubmit}>
           <FormGroup>
-            <Label>Nome:</Label>
+       
+            <InfoText>Nome</InfoText>
             <Input
               type="text"
               name="name"
@@ -58,7 +59,8 @@ const SignUpForm = () => {
           </FormGroup>
           
           <FormGroup>
-            <Label>Email:</Label>
+   
+            <InfoText>E-mail:</InfoText>
             <Input
               type="email"
               name="email"
@@ -70,9 +72,11 @@ const SignUpForm = () => {
           </FormGroup>
           
           <FormGroup>
-            <Label>Senha:</Label>
+     
+            <InfoText>Senha:</InfoText>
             <Input
               type="password"
+              placeholder='Crie uma senha'
               name="password"
               value={formData.password}
               onChange={handleChange}
@@ -81,9 +85,10 @@ const SignUpForm = () => {
           </FormGroup>
           
           <FormGroup>
-            <Label>Repita a senha:</Label>
+            <InfoText>Repita a senha:</InfoText>
             <Input
               type="password"
+              placeholder='Repita a senha'
               name="confirmPassword"
               value={formData.confirmPassword}
               onChange={handleChange}
