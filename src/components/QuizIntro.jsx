@@ -11,9 +11,9 @@ function QuizIntro({ title, description, onStart }) {
       role="region"
       aria-label="Introdução do quiz sobre acessibilidade"
     >
-      <Title>{title}</Title>
-      <Description>{description}</Description>
-      <StartButton onClick={onStart}>Jogar</StartButton>
+      <Title tabIndex="0">{title}</Title>
+      <Description tabIndex="0" aria-label="Descrição do jogo">{description}</Description>
+      <StartButton aria-label="Botão Jogar" onClick={onStart}>Jogar</StartButton>
     </IntroContainer>
   );
 }

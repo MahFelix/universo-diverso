@@ -27,20 +27,21 @@ export const GlobalStyle = createGlobalStyle`
     --secondary-button-color-hover: #d6d5d5;
     --secondary-button-text-hover: #272727;
     
-    --green-button-color: #15971a;
+    --green-button-color:rgb(40, 197, 45);
     --green-button-text: #eeeeee;
-    --green-button-color-hover:rgb(31, 179, 35);
+    --green-button-color-hover:rgb(83, 197, 87);
     --green-button-text-hover: #eeeeee;
 
-    --red-button-color:rgb(255, 38, 38);
+    --red-button-color:rgb(255, 77, 77);
     --red-button-text: #272727;
     --red-button-color-hover: rgb(255, 64, 64);
     --red-button-text-hover: #272727;
 
     --blue-button-color: #046d9e;
     --blue-button-text: #ffffff;
-    --blue-button-color-hover:rgb(130, 162, 177);
-    --blue-button-text-hover:rgb(216, 216, 216);
+    --blue-button-hover: #a9d8ee;
+    --blue-button-color-hover: #d9eaf1;
+    --blue-button-text-hover: #046d9e;
   }
 
   * {

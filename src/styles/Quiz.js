@@ -146,7 +146,7 @@ export const ContinueButton = styled.button`
 export const OptionButton = styled.button`
   background-color: var(--blue-button-text);
   color: var(--blue-button-color);
-  height: 50px;
+  height: 100%;
   padding: 10px;
   border-radius: 4px;
   font-weight: bold;
@@ -156,7 +156,7 @@ export const OptionButton = styled.button`
 
   &:hover {
     color: var(--primary-color);
-    background-color: var(--blue-button-color-hover);
+    background-color: var(--blue-button-hover);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* sombra suave */
   }
 

@@ -8,7 +8,7 @@ import { Container, ProgressBar, ProgressStep } from "../styles/Quiz";
 const quizData = {
   title: "Quiz de Acessibilidade",
   description:
-    "Entenda as questões e desafios da acessibilidade digital para usuários com deficiência",
+    "Entenda as questões e desafios da acessibilidade para usuários com deficiência",
   questions: [
     {
       id: 1,
@@ -46,7 +46,7 @@ const quizData = {
       options: [
         { id: "a", text: "Uma maneira de conectar computadores" },
         { id: "b", text: "Aumentar a velocidade de internet" },
-        { id: "d", text: "Um novo tipo de jogo" },
+        { id: "c", text: "Um novo tipo de jogo" },
         { id: "d", text: "Garantir que pessoas com diferentes habilidades possam usar sites e aplicativos" },
 
       ],
@@ -186,16 +186,18 @@ function QuizContainer() {
             path={`questao/${question.id}`}
             element={
               <>
-                <ProgressBar id={`question-${question.id}`}>
-                  <ProgressStep active={currentQuestion >= 0}>Novo jogo</ProgressStep>
+                <ProgressBar  >
+                  <ProgressStep  tabIndex="0" role="cell" id="Novo Jogo" active={currentQuestion >= 0}>
+                    Novo jogo
+                  </ProgressStep>
 
                   {quizData.questions.map((_, index) => (
-                    <ProgressStep key={index} active={currentQuestion >= index + 1}>
+                    <ProgressStep tabIndex="0" role="cell" id={`question-${question.id}`} key={index} active={currentQuestion >= index + 1}>
                       Q{index + 1}
                     </ProgressStep>
                   ))}
 
-                  <ProgressStep active={currentQuestion > quizData.questions.length}>
+                  <ProgressStep tabIndex="0" role="cell" id="Fim" active={currentQuestion > quizData.questions.length}>
                     Fim
                   </ProgressStep>
                 </ProgressBar>

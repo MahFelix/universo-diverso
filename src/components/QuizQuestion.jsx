@@ -52,8 +52,8 @@ function QuizQuestion({
 
       {showFeedback && (
         <div className="feedbackDiv">
-          <FeedbackText id={`feedback da questão-${feedback}`}>{feedback}</FeedbackText>
-          <ContinueButton  aria-label="Botão para próxima pergunta" onClick={onContinue}>Próxima pergunta</ContinueButton>
+          <FeedbackText id={`feedback da questão`}>{feedback}</FeedbackText>
+          <ContinueButton role="button" aria-labelledby="Botão para próxima pergunta" onClick={onContinue}>Próxima pergunta</ContinueButton>
         </div>
       )}
     </QuestionContainer>
