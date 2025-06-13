@@ -17,21 +17,23 @@ const Login = () => {
   return (
     <LoginContainer>
       <LoginHeader>
-        <img src={planetLogo} alt="Universo Diverso Logo" className="planet-logo" />
-        <h1>Universo Diverso</h1>
+        <img src={planetLogo} tabIndex="0" alt="Universo Diverso Logo" className="planet-logo" />
+        <h1 tabIndex="0">Universo Diverso</h1>
       </LoginHeader>
       
       <div className="login-form-container">
-        <h2>Login na Plataforma</h2>
-        <p>Digite seu email e senha para entrar</p>
+        <h2 tabIndex="0">Login na Plataforma</h2>
+        <p tabIndex="0" aria-labelledby='instruções'>Digite seu email e senha para entrar</p>
         
         <FormGroup onSubmit={handleSubmit}>
           <FormItem>
-            <InfoText>E-mail:</InfoText>
+            <InfoText tabIndex="0" aria-labelledby='e-mail'>E-mail:</InfoText>
             <input 
               type="email" 
               id="email" 
               placeholder="Digite seu e-mail" 
+              aria-label="Digite seu e-mail"
+              aria-required
               required 
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -39,24 +41,26 @@ const Login = () => {
           </FormItem>
                 
           <FormItem>
-            <InfoText>Senha:</InfoText>
+            <InfoText tabIndex="0" aria-labelledby='senha'>Senha:</InfoText>
             <input 
               type="password" 
               id="senha" 
               placeholder="Digite sua senha" 
-              required 
+              aria-label="Digite sua senha"
+              aria-required 
+              required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </FormItem>
             
           <FormItem>
-          <p/>  <button type="submit" >Entrar</button> <p/>
+          <p/>  <button role="button" aria-label="Botão Entrar" type="submit" >Entrar</button> <p/>
           </FormItem>
         
         </FormGroup>
 
-        <Link to="/signup" >
+        <Link to="/signup" aria-labelledby="Link nova conta">
           Criar uma nova conta 
         </Link>
       </div>
