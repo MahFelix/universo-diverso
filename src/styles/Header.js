@@ -1,4 +1,4 @@
-import styled,{ keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { Menu, Avatar, Button } from '@mui/material';
 
 export const NavContainer = styled.nav`
@@ -114,18 +114,6 @@ export const MenuOutlined = styled.img`
     &:hover {
       color: #ffef62;
     }
-  }
-`;
-
-
-const slideDown = keyframes`
-  from {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
   }
 `;
 
