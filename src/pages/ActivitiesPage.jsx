@@ -1,9 +1,11 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import ActivityCard from '../components/ActivityCard';
 import Header from '../components/Header';
 import {PageContainer, SectionContainer, SectionTitle, CardGrid} from '../styles/ActivitiesPage';
 
-  // Dados das atividades (normalmente viriam de uma API)
+
   export const activitiesInProgress = [
     {
       id: 1,
@@ -107,11 +109,17 @@ import {PageContainer, SectionContainer, SectionTitle, CardGrid} from '../styles
   ];
 
 const ActivitiesPage = () => {
-  // Manipulador de cliques nos cards
-  const handleCardClick = (activity) => {
-    console.log(`Atividade clicada: ${activity.title}`);
-    // Aqui você pode implementar navegação para a atividade específica
+   const navigate = useNavigate();
+ const handleCardClick = (activity) => {
+    if (activity.onClick) {
+      navigate(activity.onClick); 
+    } else {
+      console.log(`Atividade clicada: ${activity.title}`);
+    
+    }
   };
+
+  
 
   return (
     <PageContainer>

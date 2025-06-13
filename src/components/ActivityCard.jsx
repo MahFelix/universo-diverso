@@ -1,8 +1,7 @@
-import { useNavigate } from 'react-router-dom';
-import {SportsEsportsOutlined,AutoStoriesOutlined, BookOutlined} from '@mui/icons-material';
+import {SportsEsportsOutlined, AutoStoriesOutlined, BookOutlined} from '@mui/icons-material';
 import {CardContainer, CardHeader, CardIcon, CardCategory, CardTitle, CardDescription, CardButton} from '../styles/ActivityCard';
 
-// Mapeamento de tipo para ícone
+
 const getIconForType = (type) => {
   switch (type.toLowerCase()) {
     case 'jogo':
@@ -23,17 +22,11 @@ const ActivityCard = ({
   buttonText,
   textColor,
   iconColor,
-  onClick
+  onClick 
 }) => {
   const icon = getIconForType(type);
   const showProgress = progress !== undefined;
   const categoryText = showProgress ? `${progress}% concluídos` : type.toUpperCase();
-  const navigate = useNavigate();
-
-  const handleClick = (event, path) => {
-    console.log(path);
-    navigate(path);
-  };
 
   return (
     <CardContainer bgColor={bgColor}>
@@ -50,12 +43,18 @@ const ActivityCard = ({
 
       <CardButton 
         color={textColor} 
-        onClick={e=>{handleClick(e, {onClick})}}
+        onClick={() => {
+          if (typeof onClick === 'function') {
+            onClick(); 
+          } else if (typeof onClick === 'string') {
+            const event = { preventDefault: () => {} };
+            onClick(event);
+          }
+        }}
         aria-label={`${buttonText} para atividade: ${title}`}
       >
         {buttonText}
       </CardButton>
-      
     </CardContainer>
   );
 };
