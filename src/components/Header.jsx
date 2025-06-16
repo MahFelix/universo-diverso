@@ -51,20 +51,20 @@ const TopNav = () => {
             horizontal: 'right',
           }}
         >
-          <MenuItem onClick={e=>{handleClick(e, '/')}} >
-            <HomeOutlined sx={{ marginRight: 1}} />
+          <MenuItem tabIndex="0" onClick={e=>{handleClick(e, '/')}} >
+            <HomeOutlined aria-label='ícone home' sx={{ marginRight: 1}} />
               Home
           </MenuItem>
-          <MenuItem onClick={e=>{handleClick(e, '/profile')}} >
-            <AccountCircleOutlined sx={{ marginRight: 1}} />
+          <MenuItem tabIndex="0" onClick={e=>{handleClick(e, '/profile')}} >
+            <AccountCircleOutlined aria-label='ícone perfil' sx={{ marginRight: 1}} />
               Meu Perfil
           </MenuItem>
-          <MenuItem onClick={e=>{handleClick(e, '/activities')}} >
-            <LibraryAddCheckOutlined sx={{ marginRight: 1}} />
+          <MenuItem tabIndex="0" onClick={e=>{handleClick(e, '/activities')}} >
+            <LibraryAddCheckOutlined aria-label='ícone atividades' sx={{ marginRight: 1}} />
               Atividades
           </MenuItem>
-          <MenuItem onClick={e=>{handleClick(e, '/login')}} >
-            <LogoutSharp sx={{ marginRight: 1 }} />
+          <MenuItem tabIndex="0" onClick={e=>{handleClick(e, '/login')}} >
+            <LogoutSharp aria-label='ícone sair' sx={{ marginRight: 1 }} />
               Sair
           </MenuItem>
 

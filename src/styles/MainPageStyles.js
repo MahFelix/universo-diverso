@@ -66,8 +66,7 @@ export const SectionHeader = styled.div`
   margin-bottom: 16px;
 
   h3 {
-    font-size: 18px;
-    font-weight: 500;
+    font-weight: 300;
   }
 
   .view-all {
@@ -85,11 +84,11 @@ export const SectionA = styled.div`
   gap: 5px;
   margin-bottom: 10px;
   align-items: center;
-  ;`
+`;
 
 export const ActivitiesGrid = styled.div`
   display: grid;
-  grid-template-columns: ${props => props.isMobile ? '1fr' : 'repeat(5, 1fr)'};
+  grid-template-columns: ${props => props.isMobile ? '1fr' : 'repeat(auto-fill, minmax(300px, 1fr))'};
   gap: ${props => props.isMobile ? '12px' : '16px'};
 
 `;

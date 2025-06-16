@@ -2,46 +2,50 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   :root {
-    --primary-color: #272727;
-    --secondary-color: #e7e7e7;
-    --background-color: #f5f5f5;
-    --secondary-background-color: #d0f2f7;
-    --sidebar-background-color: #ffffff;
-    --input-border-color: #747373;
+    --primary-color:rgb(39, 39, 39);
+    --secondary-color:rgb(231, 231, 231);
+    --background-color:rgb(245, 245, 245);
+    --secondary-background-color:rgb(195, 247, 255);
+    --menu-background-color:rgb(255, 255, 255);
+    --menu-background-color-hover:rgb(228, 225, 225);
+    --header-background-color-1: rgb(221, 86, 255);
+    --header-background-color-2: rgb(97, 209, 253);
+    --points-background:rgb(255, 239, 98);
+    --input-border-color:rgb(116, 115, 115);
 
-    --yellow-card: #faba32;
-    --orange-card: #fc694d;
-    --pink-card: #ffb3c8;
-    --purple-card: #e977e6;
-    --blue-card: #4bb4ca;
-    --green-card:#a0b046;
+    --yellow-card:rgb(250, 186, 50);
+    --orange-card:rgb(252, 105, 77);
+    --pink-card:rgb(255, 179, 200);
+    --purple-card:rgb(233, 119, 230);
+    --blue-card:rgb(75, 180, 202);
+    --green-card:rgb(160, 176, 70);
 
-    --blue-background:rgb(156, 217, 255);
+    --blue-background:rgb(159, 215, 250);
 
     --progress-violet:rgb(180, 119, 255);
     
 
-    --primary-button-color: #272727;
-    --primary-button-text: #FFFFFF;
-    --primary-button-color-hover: #3d3d3d;
-    --primary-button-text-hover: #FFFFFF;
+    --primary-button-color:rgb(39, 39, 39);
+    --primary-button-text:rgb(255, 255, 255);
+    --primary-button-color-hover:rgb(61, 61, 61);
+    --primary-button-text-hover:rgb(255, 255, 255);
 
-    --secondary-button-color: #FFFFFF;
-    --secondary-button-text: #272727;
-    --secondary-button-color-hover: #d6d5d5;
-    --secondary-button-text-hover: #272727;
+    --secondary-button-color:rgb(255, 255, 255);
+    --secondary-button-text:rgb(39, 39, 39);
+    --secondary-button-color-hover:rgb(214, 213, 213);
+    --secondary-button-text-hover:rgb(39, 39, 39);
     
-    --green-button-color: #65b826;
-    --green-button-text: #eeeeee;
+    --green-button-color:rgb(101, 184, 38);
+    --green-button-text:rgb(238, 238, 238);
     --green-button-color-hover:rgb(86, 185, 89);
     --green-button-text-hover: #eeeeee;
 
-    --red-button-color: #de2032;
-    --red-button-text: #272727;
+    --red-button-color:rgb(222, 32, 50);
+    --red-button-text:rgb(39, 39, 39);
     --red-button-color-hover: rgb(255, 64, 64);
-    --red-button-text-hover: #272727;
+    --red-button-text-hover:rgb(39, 39, 39);
 
-    --blue-button-color: #30a3d8;
+    --blue-button-color:rgb(48, 163, 216);
     --blue-button-text: var(--primary-color);
     --blue-button-color-hover:rgb(0, 172, 252);
     --blue-button-text-hover: var(--primary-color);

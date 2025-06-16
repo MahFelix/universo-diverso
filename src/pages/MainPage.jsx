@@ -25,7 +25,7 @@ const MainPage = () => {
   // Pegamos os 2 primeiros objetos de cada array
   const recentActivities = [
     ...activitiesInProgress.slice(0,2),
-    ...newActivities.slice(0,3)
+    ...newActivities.slice(0,2)
   ];
 
   return (

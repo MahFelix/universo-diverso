@@ -1,5 +1,5 @@
 import {SportsEsportsOutlined, AutoStoriesOutlined, BookOutlined} from '@mui/icons-material';
-import {CardContainer, CardHeader, CardIcon, CardCategory, CardTitle, CardDescription, CardButton} from '../styles/ActivityCard';
+import {CardContainer, CardContent, CardHeader, CardIcon, CardCategory, CardTitle, CardDescription, CardButton} from '../styles/ActivityCard';
 
 
 const getIconForType = (type) => {
@@ -29,18 +29,19 @@ const ActivityCard = ({
   const categoryText = showProgress ? `${progress}% concluídos` : type.toUpperCase();
 
   return (
-    <CardContainer bgColor={bgColor}>
-      <CardHeader>
-        <CardIcon iconColor={iconColor} aria-hidden="true">
-          {icon}
-        </CardIcon>
-        <CardCategory>{categoryText}</CardCategory>
-      </CardHeader>
+    <CardContainer tabIndex="0" aria-label='card de atividade' bgColor={bgColor}>
+      <CardContent>
+          <CardHeader>
+            <CardIcon aria-label='ícone do card' iconColor={iconColor} aria-hidden="true">
+              {icon}
+            </CardIcon>
+            <CardCategory tabIndex="0" aria-labelledby='categoria ou avanço da atividade'>{categoryText}</CardCategory>
+          </CardHeader>
 
-      <CardTitle color={textColor}><h3>{title}</h3></CardTitle>
+          <CardTitle  tabIndex="0" aria-labelledby='card title' color={textColor}>{title}</CardTitle>
 
-      <CardDescription color={textColor}><p>{description}</p></CardDescription>
-
+          <CardDescription tabIndex="0" aria-labelledby='card description' color={textColor}>{description}</CardDescription>
+      </CardContent>
       <CardButton 
         color={textColor} 
         onClick={() => {
@@ -51,7 +52,7 @@ const ActivityCard = ({
             onClick(event);
           }
         }}
-        aria-label={`${buttonText} para atividade: ${title}`}
+        aria-label={`${buttonText} a atividade: ${title}`}
       >
         {buttonText}
       </CardButton>

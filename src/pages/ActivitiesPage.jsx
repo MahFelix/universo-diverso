@@ -3,7 +3,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import ActivityCard from '../components/ActivityCard';
 import Header from '../components/Header';
-import {PageContainer, SectionContainer, SectionTitle, CardGrid} from '../styles/ActivitiesPage';
+import {LibraryAddCheckOutlined} from '@mui/icons-material';
+import {PageContainer, SectionContainer, SectionTitle, SectionTitleText, CardGrid} from '../styles/ActivitiesPage';
 
 
   export const activitiesInProgress = [
@@ -127,7 +128,10 @@ const ActivitiesPage = () => {
 
        <SectionContainer>
         <SectionContainer>
-          <SectionTitle>Atividades já iniciadas</SectionTitle>
+          <SectionTitle>
+            <LibraryAddCheckOutlined aria-label="ícone de atividades"/>
+            <SectionTitleText>Atividades já iniciadas</SectionTitleText>
+          </SectionTitle>
           <CardGrid>
             {activitiesInProgress.map(activity => (
               <ActivityCard 
@@ -140,7 +144,10 @@ const ActivitiesPage = () => {
         </SectionContainer>
 
         <SectionContainer>
-          <SectionTitle>Novas Atividades</SectionTitle>
+          <SectionTitle>
+            <LibraryAddCheckOutlined aria-label="ícone de atividades"/>
+            <SectionTitleText>Novas Atividades</SectionTitleText>
+          </SectionTitle>
           <CardGrid>
             {newActivities.map(activity => (
               <ActivityCard 
@@ -153,7 +160,10 @@ const ActivitiesPage = () => {
         </SectionContainer>
 
         <SectionContainer>
-          <SectionTitle>Atividades já finalizadas</SectionTitle>
+          <SectionTitle>
+            <LibraryAddCheckOutlined aria-label="ícone de atividades"/>
+            <SectionTitleText>Atividades já finalizadas</SectionTitleText>
+          </SectionTitle>
           <CardGrid>
             {completedActivities.map(activity => (
               <ActivityCard 
