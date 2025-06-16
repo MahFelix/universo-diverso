@@ -27,12 +27,13 @@ export const ProgressBar = styled.div`
 export const ProgressStep = styled.div`
   flex: 1;
   text-align: center;
+  align-content: center;
   padding: 10px;
   margin: 0 4px;
   border-radius: 8px;
   font-weight: bold;
   background-color: ${(props) => (props.active ? "var(--progress-violet)" : "var(--secondary-color)")};
-  color: ${(props) => (props.active ? "var(--secondary-color)" : "var(--primary-color)")};
+  color: var(--primary-color);
 `;
 
 //
@@ -114,10 +115,9 @@ export const PrimaryButton = styled(BaseButton)`
 `;
 
 export const OutlineButton = styled(BaseButton)`
-  background-color: var(--blue-button-text);
-  color: var(--blue-button-color);
+  background-color: var(--secondary-button-color);
+  color: var(--secondary-button-text);
   padding: 10px 20px;
-  border-radius: 20px;
 
   &:hover {
     color: var(--blue-button-text-hover);
@@ -138,14 +138,14 @@ export const ContinueButton = styled.button`
   font-weight: bold;
 
   &:hover {
-    color: var(--secondary-button-text-hover);
-    background-color: var(--secondary-button-color-hover);
+    color: var(--blue-button-text-hover);
+    background-color: var(--blue-button-color-hover);
   }
 `;
 
 export const OptionButton = styled.button`
-  background-color: var(--blue-button-text);
-  color: var(--blue-button-color);
+  background-color: var(--blue-button-color);
+  color: var(--blue-button-text);
   height: 100%;
   padding: 10px;
   border-radius: 4px;
@@ -156,7 +156,7 @@ export const OptionButton = styled.button`
 
   &:hover {
     color: var(--primary-color);
-    background-color: var(--blue-button-hover);
+    background-color: var(--blue-button-color-hover);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* sombra suave */
   }
 

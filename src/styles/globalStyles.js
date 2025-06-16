@@ -11,11 +11,11 @@ export const GlobalStyle = createGlobalStyle`
 
     --orange-card: #FFA91D;
     --green-card: #2af742;
-    --blue-card: #3fb4fd;
+    --blue-card:rgb(156, 217, 255);
     --red-card: #EA787E;
     --light-green-card: #50c05f;
 
-    --progress-violet:rgb(125, 54, 212);
+    --progress-violet:rgb(180, 119, 255);
     
 
     --primary-button-color: #272727;
@@ -28,21 +28,20 @@ export const GlobalStyle = createGlobalStyle`
     --secondary-button-color-hover: #d6d5d5;
     --secondary-button-text-hover: #272727;
     
-    --green-button-color:rgb(40, 197, 45);
+    --green-button-color: #65b826;
     --green-button-text: #eeeeee;
-    --green-button-color-hover:rgb(83, 197, 87);
+    --green-button-color-hover:rgb(86, 185, 89);
     --green-button-text-hover: #eeeeee;
 
-    --red-button-color:rgb(255, 77, 77);
+    --red-button-color: #de2032;
     --red-button-text: #272727;
     --red-button-color-hover: rgb(255, 64, 64);
     --red-button-text-hover: #272727;
 
-    --blue-button-color:rgb(3, 104, 151);
-    --blue-button-text: #ffffff;
-    --blue-button-hover: #a9d8ee;
-    --blue-button-color-hover: #d9eaf1;
-    --blue-button-text-hover: #046d9e;
+    --blue-button-color: #30a3d8;
+    --blue-button-text: var(--primary-color);
+    --blue-button-color-hover:rgb(0, 172, 252);
+    --blue-button-text-hover: var(--primary-color);
   }
 
   * {
