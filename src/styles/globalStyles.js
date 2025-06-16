@@ -9,11 +9,14 @@ export const GlobalStyle = createGlobalStyle`
     --sidebar-background-color: #ffffff;
     --input-border-color: #747373;
 
-    --orange-card: #FFA91D;
-    --green-card: #2af742;
-    --blue-card:rgb(156, 217, 255);
-    --red-card: #EA787E;
-    --light-green-card: #50c05f;
+    --yellow-card: #faba32;
+    --orange-card: #fc694d;
+    --pink-card: #ffb3c8;
+    --purple-card: #e977e6;
+    --blue-card: #4bb4ca;
+    --green-card:#a0b046;
+
+    --blue-background:rgb(156, 217, 255);
 
     --progress-violet:rgb(180, 119, 255);
     

@@ -8,7 +8,7 @@ export const Container = styled.div`
   flex-direction: column;
   height: 100vh;
   width: 100vw;
-  background-color: var(--blue-card);
+  background-color: var(--blue-background);
   padding: 1rem;
   box-sizing: border-box;
   overflow: hidden;
@@ -185,7 +185,6 @@ export const CloseButton = styled.button`
 // CONTAINERS ESPECÍFICOS
 //
 export const ResultContainer = styled.div`
-  background-color: var(--blue-card);
   padding: 40px 30px;
   border-radius: 8px;
   color: var(--primary-color);
@@ -200,7 +199,6 @@ export const QuestionContainer = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-color: var(--blue-card);
   padding: 30px;
   color: var(--primary-color);
   position: relative;

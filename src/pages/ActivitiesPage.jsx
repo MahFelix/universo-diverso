@@ -9,7 +9,7 @@ import {PageContainer, SectionContainer, SectionTitle, CardGrid} from '../styles
   export const activitiesInProgress = [
     {
       id: 1,
-      bgColor: '#FF9800',
+      bgColor: 'var(--yellow-card)',
       type: 'Jogo',
       progress: 50,
       title: 'Trilha da Inclusão',
@@ -18,7 +18,7 @@ import {PageContainer, SectionContainer, SectionTitle, CardGrid} from '../styles
     },
     {
       id: 2,
-      bgColor: '#4CAF50',
+      bgColor: 'var(--orange-card)',
       type: 'História',
       progress: 30,
       title: 'Joana vai às compras',
@@ -30,7 +30,23 @@ import {PageContainer, SectionContainer, SectionTitle, CardGrid} from '../styles
   export const newActivities = [
     {
       id: 3,
-      bgColor: '#03A9F4',
+      bgColor: 'var(--pink-card)',
+      type: 'História',
+      title: 'Meu melhor amigo',
+      description: 'Descubra como uma amizade pode trazer força e inclusão para todos nós',
+      buttonText: 'Clique para ler'
+    },
+    {
+      id: 4,
+      bgColor: 'var(--purple-card)',
+      type: 'Jogo',
+      title: 'Caça ao Tesouro da Acessibilidade',
+      description: 'Encontre os pontos críticos e aprenda como tornar ambientes mais acessíveis',
+      buttonText: 'Clique para jogar'
+    },
+    {
+      id: 5,
+      bgColor: 'var(--blue-card)',
       type: 'Tutorial',
       title: 'Questão de Acessibilidade',
       description: 'Entenda as questões e desafios da acessibilidade para usuários com deficiência',
@@ -38,24 +54,8 @@ import {PageContainer, SectionContainer, SectionTitle, CardGrid} from '../styles
       onClick: '/quiz'
     },
     {
-      id: 4,
-      bgColor: '#FF5252',
-      type: 'História',
-      title: 'Meu melhor amigo',
-      description: 'Descubra como uma amizade pode trazer força e inclusão para todos nós',
-      buttonText: 'Clique para ler'
-    },
-    {
-      id: 5,
-      bgColor: '#4CAF50',
-      type: 'Jogo',
-      title: 'Caça ao Tesouro da Acessibilidade',
-      description: 'Encontre os pontos críticos e aprenda como tornar ambientes mais acessíveis',
-      buttonText: 'Clique para jogar'
-    },
-    {
       id: 6,
-      bgColor: '#03A9F4',
+      bgColor: 'var(--green-card)',
       type: 'Tutorial',
       title: 'Missão de Inclusão',
       description: 'Ajude Sara a encontrar uma alternativa para participar das atividades na escola',
@@ -63,7 +63,7 @@ import {PageContainer, SectionContainer, SectionTitle, CardGrid} from '../styles
     },
     {
       id: 7,
-      bgColor: '#9C27B0',
+      bgColor: 'var(--yellow-card)',
       type: 'Jogo',
       title: 'Desafios de Empatia',
       description: 'Coloque-se no lugar do outro em situações do dia a dia e descubra como ser mais inclusivo',
@@ -71,7 +71,7 @@ import {PageContainer, SectionContainer, SectionTitle, CardGrid} from '../styles
     },
     {
       id: 8,
-      bgColor: '#FF9800',
+      bgColor: 'var(--orange-card)',
       type: 'História',
       title: 'Não quero me mudar!',
       description: 'A história de como uma mudança de escola pode ser desafiadora para crianças neurodivergentes',
@@ -79,7 +79,7 @@ import {PageContainer, SectionContainer, SectionTitle, CardGrid} from '../styles
     },
     {
       id: 9,
-      bgColor: '#4CAF50',
+      bgColor: 'var(--pink-card)',
       type: 'História',
       title: 'O passeio da escola',
       description: 'Participe de um passeio escolar inclusivo e aprenda sobre acessibilidade',
@@ -90,7 +90,7 @@ import {PageContainer, SectionContainer, SectionTitle, CardGrid} from '../styles
   export const completedActivities = [
     {
       id: 10,
-      bgColor: '#E040FB',
+      bgColor: 'var(--purple-card)',
       type: 'Jogo',
       progress: 100,
       title: 'Jogo da Inclusão de Palavras',
@@ -99,7 +99,7 @@ import {PageContainer, SectionContainer, SectionTitle, CardGrid} from '../styles
     },
     {
       id: 11,
-      bgColor: '#FF5252',
+      bgColor: 'var(--blue-card)',
       type: 'História',
       progress: 100,
       title: 'O aniversário da Mariana',
