@@ -115,8 +115,8 @@ export const PrimaryButton = styled(BaseButton)`
 `;
 
 export const OutlineButton = styled(BaseButton)`
-  background-color: var(--secondary-button-color);
-  color: var(--secondary-button-text);
+  background-color: var(--blue-button-color);
+  color: var(--blue-button-text);
   padding: 10px 20px;
 
   &:hover {
@@ -133,8 +133,8 @@ export const StartButton = styled(OutlineButton)`
 export const RestartButton = styled(OutlineButton)``;
 
 export const ContinueButton = styled.button`
-  background-color: var(--secondary-button-color);
-  color: var(--secondary-button-text);
+  background-color: var(--blue-button-color);
+  color: var(--blue-button-text);
   font-weight: bold;
 
   &:hover {
@@ -155,7 +155,7 @@ export const OptionButton = styled.button`
   justify-content: space-between;
 
   &:hover {
-    color: var(--primary-color);
+    color: var(--blue-button-text-hover);
     background-color: var(--blue-button-color-hover);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* sombra suave */
   }
@@ -163,8 +163,8 @@ export const OptionButton = styled.button`
   ${({ selected }) =>
     selected &&
     css`
-      color:var(--primary-color);
-      background-color: var(--secondary-color);
+      color: var(--blue-button-text-hover);
+      background-color: var(--blue-button-color-hover);
     `}
 `;
 

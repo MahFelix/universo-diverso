@@ -45,7 +45,7 @@ export const GlobalStyle = createGlobalStyle`
     --red-button-color-hover: rgb(255, 64, 64);
     --red-button-text-hover:rgb(39, 39, 39);
 
-    --blue-button-color:rgb(48, 163, 216);
+    --blue-button-color:rgb(253, 253, 253);
     --blue-button-text: var(--primary-color);
     --blue-button-color-hover:rgb(0, 172, 252);
     --blue-button-text-hover: var(--primary-color);
